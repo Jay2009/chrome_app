@@ -1,3 +1,134 @@
 .hidden {
   display: none;
 }
+
+#weather {
+  position: absolute;
+  right: 5%;
+}
+
+#clock {
+  position: absolute;
+  top: 10vh;
+  display: flex;
+  font-size: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px;
+  opacity: 68%;
+}
+
+#login-form {
+  position: absolute;
+  top: 30vh;
+  display: flex;
+  font-size: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.loginInput {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.loginSubmit {
+  background-color: yellow;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  opacity: 60%;
+}
+
+#greeting {
+  position: absolute;
+  top: 30vh;
+  display: flex;
+  font-size: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.todoSpace {
+  position: absolute;
+  top: 50vh;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.todoInput {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#quote {
+  position: absolute;
+  top: 85vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px;
+  opacity: 68%;
+}
+
+#quote span:first-child {
+  font-size: 25px;
+  font-weight: 40px;
+  justify-content: center;
+  position: center;
+  display: flex;
+  text-align: center;
+}
+
+#quote span:last-child {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 40px;
+  justify-content: center;
+  position: center;
+  display: flex;
+  text-align: center;
+}
+
+@keyframes weatherColorChange {
+  0% {
+    color: tomato;
+  }
+  20% {
+    color: yellow;
+  }
+  40% {
+    color: greenyellow;
+  }
+  60% {
+    color: aquamarine;
+  }
+  80% {
+    color: navy;
+  }
+  100% {
+    color: purple;
+  }
+}
+
+#weather {
+  animation: weatherColorChange 6s linear infinite;
+}
