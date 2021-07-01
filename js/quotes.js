@@ -24,7 +24,7 @@ const quotes = [
         author: "- Jay -",
     },
     {
-        quote: "Do not get blinded by any news. Always try to see the other side of it then, you will find the honey money. ",
+        quote: "Do not get blinded by news. Always try to see the other side of it then, you will find the honey money. ",
         author: "- Jay -",
     },
     {
