@@ -11,22 +11,24 @@ function onLoginSubmit(event) {
   const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY, username);
   paintGreetings(username);
+  
 }
 
 function paintGreetings(username) {
   greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   btnChangeName.classList.remove(HIDDEN_CLASSNAME);
-  
+  loginInput.value=null;
+  loginInput.placeholder='Write your name.';
 }
 
 btnChangeName.onclick = function(){
   localStorage.removeItem(USERNAME_KEY);
+  greeting.innerText=``;
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  btnChangeName.classList.add(HIDDEN_CLASSNAME);
   greeting.classList.add(HIDDEN_CLASSNAME);
   
-  loginForm.classList.remove(HIDDEN_CLASSNAME);
-  
-  paintGreetings(savedUsername);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -38,6 +40,5 @@ if (savedUsername === null) {
 } 
 else{
   paintGreetings(savedUsername);
- 
 }
 

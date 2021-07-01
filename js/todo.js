@@ -22,9 +22,17 @@ function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id =newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo.text;
+    span.innerText = newTodo.text + "  ";
     const button = document.createElement("button");
     button.innerText = "X";
+    button.style.color = "red";
+    button.style.border= "none";
+    button.style.backgroundColor = "rgb(179, 174, 174)";
+    button.style.opacity = "80%";
+    button.style.borderRadius ="5px";
+    button.style.margin = "10px";
+    
+    
     button.addEventListener("click",deleteToDo);
     li.appendChild(span);
     li.appendChild(button);
