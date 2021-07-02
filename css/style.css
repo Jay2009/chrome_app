@@ -26,7 +26,7 @@
   position: absolute;
   top: 25vh;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 10px;
   margin-right: 10px;
   text-align: center;
@@ -90,7 +90,7 @@
   display: flex;
   flex-direction: column;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 10px;
   margin-right: 10px;
   width: 400px;
@@ -105,6 +105,35 @@
   top: 40vh;
   left: 5%;
   transform: translateX(-5%);
+  background-color: rgb(255, 238, 238);
+  opacity: 70%;
+  border-radius: 10px;
+}
+#todo-listSecond {
+  position: absolute;
+  top: 40vh;
+  left: 20%;
+  transform: translateX(-20%);
+  background-color: rgb(255, 238, 238);
+  opacity: 70%;
+  border-radius: 10px;
+}
+
+#todo-listThird {
+  position: absolute;
+  top: 40vh;
+  left: 35%;
+  transform: translateX(-35%);
+  background-color: rgb(255, 238, 238);
+  opacity: 70%;
+  border-radius: 10px;
+}
+
+#todo-listForth {
+  position: absolute;
+  top: 40vh;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: rgb(255, 238, 238);
   opacity: 70%;
   border-radius: 10px;
@@ -206,4 +235,19 @@
 }
 .loginSubmit:focus {
   border-color: black;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#quote {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 32px;
+  height: 32px;
+  border-right: 0.05em solid black;
+  animation: cursor 0.5s ease infinite;
 }

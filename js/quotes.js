@@ -45,5 +45,14 @@ const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todaysQuote.quote;
+
 author.innerText = todaysQuote.author;
+let index= 0;
+function typing(){
+    quote.textContent += todaysQuote.quote[index++];
+    if(index > todaysQuote.length){
+        quote.innerText.textContent = "";
+      index = 0;
+    }
+  }
+  setInterval(typing, 500);
