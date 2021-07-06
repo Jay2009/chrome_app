@@ -48,7 +48,7 @@ const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 author.innerText = todaysQuote.author;
 let index= 0;
-function typing(){
+/*function typing(){
     quote.textContent += todaysQuote.quote[index++];
     if(index > todaysQuote.length){
         quote.innerText.textContent = "";
@@ -56,3 +56,4 @@ function typing(){
     }
   }
   setInterval(typing, 500);
+  */

@@ -1,0 +1,44 @@
+.todo-form-all {
+  position: absolute;
+  top: 35vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  left: 3%;
+  transform: translateX(-3%);
+}
+
+.firstColumn,
+.SecondColumn,
+.ThirdColumn,
+.FourthColumn {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.todoInput,
+.todoInputSecond,
+.todoInputThird,
+.todoInputFourth {
+  display: flex;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-right: 10px;
+  width: 150px;
+  text-align: center;
+  opacity: 70%;
+  outline: none;
+}
+
+#todo-list,
+#todo-listSecond,
+#todo-listThird,
+#todo-listFourth {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 238, 238);
+  opacity: 70%;
+  border-radius: 10px;
+}

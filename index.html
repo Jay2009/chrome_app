@@ -13,24 +13,57 @@
         <span></span>
     </div>
     <form class="hidden" id="login-form">
-    <input
-        class= "loginInput"
-        required
-        maxlength="15" 
-        type="text" 
-        placeholder="Write your name."/>
-        <input class="loginSubmit" type="submit" value="Log In" />
+        <div class = "login">
+            <input
+            class= "loginInput"
+            required
+            maxlength="15" 
+            type="text" 
+            placeholder="Write your name."/>         
+            <input class="loginSubmit" type="submit" value="Log In" />
+        </div>
     </form>
+
     <h2 id="clock">00 : 00 : 00</h2>
+
     <h1 id="greeting" class="hidden"></h1>
     <button id="change-name" class="hidden" >Change name</button>
-<div class="todoSpace">    
-    <form id="todo-form">
-        <input class="todoInput" maxlength="10" required type="text" placeholder="Write the companies you investing on and press Enter" />
-    </form>
-</div>    
-    <ul id="todo-list"></ul>
-    <ul id="todo-listSecond"></ul>
+
+    <div class = "todo-form-all">
+        <div class = "firstColumn">
+            <form id="todo-form">
+                <input class="todoInput" maxlength="10" required type="text" placeholder="A" />     
+            </form>
+            <ul id="todo-list"></ul>
+        </div>
+
+        <div class = "SecondColumn">
+            <form id="todo-formSecond">
+                <input class="todoInputSecond" maxlength="10" required type="text" placeholder="A" />
+            </form>
+            <ul id="todo-listSecond"></ul>
+        </div>
+
+        <div class = "ThirdColumn">
+            <form id="todo-formThird">
+                <input class="todoInputThird" maxlength="10" required type="text" placeholder="A" />
+            </form>
+            <ul id="todo-listThird"></ul>
+        </div>
+
+        <div class = "FourthColumn">
+            <form id="todo-formFourth">
+                <input class="todoInputFourth" maxlength="10" required type="text" placeholder="A" />
+            </form>
+            <ul id="todo-listFourth"></ul>
+        </div>
+    </div>
+
+    
+
+    
+    
+    
     <ul id="todo-listThird"></ul>
     <ul id="todo-listForth"></ul>
     <div id="quote">

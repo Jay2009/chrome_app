@@ -23,9 +23,10 @@ function paintGreetings(username) {
 }
 
 btnChangeName.onclick = function(){
+  event.preventDefault();
   localStorage.removeItem(USERNAME_KEY);
-  greeting.innerText=``;
   loginForm.classList.remove(HIDDEN_CLASSNAME);
+  greeting.innerText=``;
   btnChangeName.classList.add(HIDDEN_CLASSNAME);
   greeting.classList.add(HIDDEN_CLASSNAME);
   
@@ -39,6 +40,7 @@ if (savedUsername === null) {
   loginForm.addEventListener("submit", onLoginSubmit);
 } 
 else{
+  
   paintGreetings(savedUsername);
 }
 
