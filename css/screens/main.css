@@ -174,17 +174,9 @@
   border-color: black;
 }
 
-@keyframes cursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
 #quote {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 32px;
-  height: 32px;
-  border-right: 0.05em solid black;
-  animation: cursor 0.5s ease infinite;
+  display: inline-block;
+  animation-name: cursor;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
 }

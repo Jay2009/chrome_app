@@ -41,19 +41,39 @@ const quotes = [
     },
 ];
 
+
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
+let quoteBool = false;
 
-author.innerText = todaysQuote.author;
+
+
+let quoteToday =JSON.stringify(todaysQuote.quote);
+//let authorToday = author.innerText = todaysQuote.author;
 let index= 0;
-/*function typing(){
-    quote.textContent += todaysQuote.quote[index++];
-    if(index > todaysQuote.length){
-        quote.innerText.textContent = "";
-      index = 0;
+let indexAuthor=0;
+let quoteInterval = setInterval(typing,200);
+
+quoteToday=quoteToday.split("");
+
+
+
+if(quoteBool==false){
+    quoteBool=true;
+
+    let quoteInterval = setInterval(typing,200);
+
+}
+function typing(){
+    if(index < quoteToday.length){
+        quote.append(quoteToday[index]); 
+        index++;
+        
+    }else{
+        clearInterval(quoteInterval);
+        let authorToday = author.innerText = todaysQuote.author;
     }
-  }
-  setInterval(typing, 500);
-  */
+    
+}
