@@ -46,3 +46,11 @@
   opacity: 70%;
   border-radius: 10px;
 }
+
+.testclass span {
+  width: 10px;
+  padding: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

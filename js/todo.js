@@ -77,8 +77,20 @@ function paintToDo(newTodo) {
   li.id = newTodo.id;
 
   const span = document.createElement("span");
-  span.innerText = newTodo.text + "  ";
-
+ 
+  const num = 13;
+  let allText = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+ 
+  if (allText.length > num)
+  {
+    allText = allText.substring(0, 13) + "...";
+    span.innerText = allText;
+    console.log(span.innerText.clientWidth); 
+  }else{
+    span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  }
+  
+  
   const button = document.createElement("button");
     button.innerText = "X";
     button.style.color = "red";
@@ -87,10 +99,13 @@ function paintToDo(newTodo) {
     button.style.opacity = "80%";
     button.style.borderRadius ="5px";
     button.style.margin = "10px";
+    button.style.left = "20%";
+    button.style.transform = "translateX(-20%)";
     button.style.cursor= "pointer";
 
     button.addEventListener("click",deleteToDo);  
     li.appendChild(span);
+    
     li.appendChild(button);
     toDoList.appendChild(li);    
 }
