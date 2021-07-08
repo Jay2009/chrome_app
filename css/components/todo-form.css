@@ -1,6 +1,6 @@
 .todo-form-all {
   position: absolute;
-  top: 35vh;
+  top: 32vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,12 +20,16 @@
 .todoInput,
 .todoInputSecond,
 .todoInputThird,
-.todoInputFourth {
+.todoInputFourth,
+.toTalMoneyInput {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: none;
   border-radius: 15px;
   padding: 10px;
   margin-right: 10px;
+  margin-top: 5px;
   width: 150px;
   text-align: center;
   opacity: 70%;

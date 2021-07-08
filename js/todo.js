@@ -1,20 +1,28 @@
 const toDoForm = document.getElementById("todo-form");
+const totalForm = document.getElementById("total-form");
 const toDoInput = document.querySelector("#todo-form input");
+const toTalMoneyInput = document.querySelector("#total-form input");
 const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos";
 
 const toDoFormSecond = document.getElementById("todo-formSecond");
+const totalFormSecond = document.getElementById("total-formSecond");
 const toDoInputSecond = document.querySelector("#todo-formSecond input");
+const toTalMoneyInputSecond = document.querySelector("#total-formSecond input");
 const toDoListSecond = document.getElementById("todo-listSecond");
 const TODOS_KEY_SECOND = "todosSecond";
 
 const toDoFormThird = document.getElementById("todo-formThird");
+const totalFormThird = document.getElementById("total-formThird");
 const toDoInputThird = document.querySelector("#todo-formThird input");
+const toTalMoneyInputThird = document.querySelector("#total-formThird input");
 const toDoListThird = document.getElementById("todo-listThird");
 const TODOS_KEY_THIRD = "todosThird";
 
 const toDoFormFourth = document.getElementById("todo-formFourth");
+const totalFormFourth = document.getElementById("total-formFourth");
 const toDoInputFourth = document.querySelector("#todo-formFourth input");
+const toTalMoneyInputFourth = document.querySelector("#total-formFourth input");
 const toDoListFourth = document.getElementById("todo-listFourth");
 const TODOS_KEY_FOURTH = "todosFourth";
 
@@ -22,6 +30,7 @@ let toDos = [];
 let toDosSecond = [];
 let toDosThird = [];
 let toDosFourth = [];
+
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -158,96 +167,170 @@ function paintToDoFourth(newTodoFourth) {
 
 function handleToDoSubmit(event) { 
 const numberOfTag = toDoList.childElementCount;
-    console.log(numberOfTag);
-    
+
+  if(toDoInput.value != ""){
     if(numberOfTag <= 9){  
         event.preventDefault();
         const newTodo = toDoInput.value;
         toDoInput.value = "";
+
+        const newTotalMoney = toTalMoneyInput.value;
+        toTalMoneyInput.value = "";
+
         const newTodoObj = {
             text: newTodo,
             id: Date.now(),
+            value: newTotalMoney,
         };
         toDos.push(newTodoObj);
         paintToDo(newTodoObj);
         saveToDos();
+        toDoInput.focus();
     } else{
     event.preventDefault();
     toDoInput.value = "";
+    toTalMoneyInput.value = "";
     alert("The number of list is maximum now.");
     }
+  }else{
+    event.preventDefault();
+    alert("Please type the name of stock");
+    toDoInput.focus();
+  }
 }
 
 function handleToDoSubmitSecond(event) {
   const numberOfTag = toDoListSecond.childElementCount;
 
-  console.log(numberOfTag);
-  if(numberOfTag <=9){  
+  if(toDoInputSecond.value != ""){
+    if(numberOfTag <=9){  
       event.preventDefault();
       const newTodoSecond = toDoInputSecond.value;
       toDoInputSecond.value = "";
+
+      const newTotalMoneySecond = toTalMoneyInputSecond.value;
+      toTalMoneyInputSecond.value = "";
+
       const newTodoObjSecond = {
           text: newTodoSecond,
           id: Date.now(),
+          value: newTotalMoneySecond,
       };
       toDosSecond.push(newTodoObjSecond);
       paintToDoSecond(newTodoObjSecond);
       saveToDosSecond();
-  } else{
-  event.preventDefault();
-  toDoInputSecond.value = "";
-  alert("The number of list is maximum now.");
+      toDoInputSecond.focus();
+    } else{
+    event.preventDefault();
+    toDoInputSecond.value = "";
+    toTalMoneyInputSecond.value = "";
+    alert("The number of list is maximum now.");
+    }
+  }else {
+    event.preventDefault();
+    alert("Please type the name of stock");
+    toDoInputSecond.focus();
   }
 }
 
 function handleToDoSubmitThird(event) {
   const numberOfTag = toDoListThird.childElementCount;
 
-  console.log(numberOfTag);
-  if(numberOfTag <=9){  
+  if(toDoInputThird.value != ""){
+    if(numberOfTag <=9){  
       event.preventDefault();
+
       const newTodoThird = toDoInputThird.value;
       toDoInputThird.value = "";
+
+      const newTotalMoneyThird = toTalMoneyInputThird.value;
+      toTalMoneyInputThird.value = "";
+
       const newTodoObjThird = {
           text: newTodoThird,
           id: Date.now(),
+          value: newTotalMoneyThird,
+          
       };
       toDosThird.push(newTodoObjThird);
       paintToDoThird(newTodoObjThird);
       saveToDosThird();
-  } else{
-  event.preventDefault();
-  toDoInputThird.value = "";
-  alert("The number of list is maximum now.");
+      toDoInputThird.focus();
+    } else{
+    event.preventDefault();
+    toDoInputThird.value = "";
+    toTalMoneyInputThird.value = "";
+    alert("The number of list is maximum now.");
+    }
+  }else{
+    event.preventDefault();
+    alert("Please type the name of stock");
+    toDoInputThird.focus();
   }
 }
 
 function handleToDoSubmitFourth(event) {
   const numberOfTag = toDoListFourth.childElementCount;
 
-  console.log(numberOfTag);
-  if(numberOfTag <=9){  
+  if(toDoInputFourth.value != ""){ 
+    if(numberOfTag <=9){  
       event.preventDefault();
       const newTodoFourth = toDoInputFourth.value;
       toDoInputFourth.value = "";
+      
+      const newTotalMoneyFourth = toTalMoneyInputFourth.value;
+      toTalMoneyInputFourth.value = "";
+
       const newTodoObjFourth = {
           text: newTodoFourth,
           id: Date.now(),
+          value: newTotalMoneyFourth,
       };
       toDosFourth.push(newTodoObjFourth);
       paintToDoFourth(newTodoObjFourth);
       saveToDosFourth();
-  } else{
-  event.preventDefault();
-  toDoInputFourth.value = "";
-  alert("The number of list is maximum now.");
+      toDoInputFourth.focus();
+    } else{
+    event.preventDefault();
+    toDoInputFourth.value = "";
+    toTalMoneyInputFourth.value = "";
+    alert("The number of list is maximum now.");
+    }
+  }else{
+    event.preventDefault();
+    alert("Please type the name of stock");
+    toDoInputFourth.focus();
   }
 }
+function nextInput(event){
+  event.preventDefault();
+  toTalMoneyInput.focus(); 
+}
+function nextInputSecond(event){
+  event.preventDefault();
+  toTalMoneyInputSecond.focus();
+}
+function nextInputThird(event){
+  event.preventDefault();
+  toTalMoneyInputThird.focus();
+}
+function nextInputFourth(event){
+  event.preventDefault();
+  toTalMoneyInputFourth.focus();
+}
 
-toDoForm.addEventListener("submit", handleToDoSubmit);
-toDoFormSecond.addEventListener("submit", handleToDoSubmitSecond);
-toDoFormThird.addEventListener("submit", handleToDoSubmitThird);
-toDoFormFourth.addEventListener("submit", handleToDoSubmitFourth);
+
+toDoForm.addEventListener("submit", nextInput);
+totalForm.addEventListener("submit", handleToDoSubmit);
+
+toDoFormSecond.addEventListener("submit", nextInputSecond);
+totalFormSecond.addEventListener("submit", handleToDoSubmitSecond);
+
+toDoFormThird.addEventListener("submit", nextInputThird);
+totalFormThird.addEventListener("submit", handleToDoSubmitThird);
+
+toDoFormFourth.addEventListener("submit", nextInputFourth);
+totalFormFourth.addEventListener("submit", handleToDoSubmitFourth);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 const savedToDosSecond = localStorage.getItem(TODOS_KEY_SECOND);
