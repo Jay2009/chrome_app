@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="./resources/jquery-3.6.0.min.js"></script>
     <title>Chrome App</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
             </form>
 
             <form id ="total-form">
-            <input class="toTalMoneyInput" maxlength="10" required type="number" placeholder="Total amount" />
+            <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
             </form>
 
             <ul id="todo-list"></ul>

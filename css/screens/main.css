@@ -18,6 +18,9 @@
 
 #clock {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   top: 5vh;
   display: flex;
   font-size: 45px;

@@ -28,7 +28,7 @@
   border: none;
   border-radius: 15px;
   padding: 10px;
-  margin: 5px;
+  margin: 5px 18px;
   width: 150px;
   text-align: center;
   opacity: 70%;
@@ -52,14 +52,16 @@
 #todo-listThird li,
 #todo-listFourth li {
   display: flex;
+  align-items: center;
 }
 
 #todo-list span,
 #todo-listSecond span,
 #todo-listThird span,
 #todo-listFourth span {
-  margin: 10px;
-  width: 120px;
+  margin-left: 10px;
+  padding: 12px;
+  width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -71,14 +73,34 @@
 #todo-listFourth button {
   display: flex;
   justify-content: center;
+
+  margin-right: 10px;
   text-align: center;
   opacity: 80%;
-  margin: 10px 10px;
   border-radius: 5px;
-  padding: 3px 5.5px;
+  padding: 12px;
   float: right;
   cursor: pointer;
   color: red;
+  font-weight: 20px;
+  font-size: 15px;
   border: none;
-  background-color: rgb(179, 174, 174);
+}
+
+#todo-list span:hover,
+#todo-listSecond span:hover,
+#todo-listThird span:hover,
+#todo-listFourth span:hover {
+  width: 290px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#todo-list button:hover,
+#todo-listSecond button:hover,
+#todo-listThird button:hover,
+#todo-listFourth button:hover {
+  width: 194px;
+  padding: 12px;
 }

@@ -84,8 +84,13 @@ function paintToDo(newTodo) {
   li.appendChild(span);
   li.appendChild(button);
   toDoList.appendChild(li);  
+  
 
-  span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";  
+  span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  console.log(span.scrollWidth);
+  console.log(span);
+  
+  
 }
 
 function paintToDoSecond(newTodoSecond) {
@@ -134,6 +139,12 @@ function paintToDoFourth(newTodoFourth) {
   toDoListFourth.appendChild(li);
   
   span.innerText  = newTodoFourth.text + " : " + newTodoFourth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+}
+
+function maxNumberLength(object){
+  if(object.value.length > object.maxLength){
+    object.value = object.value.slice(0, object.maxLength);
+  }
 }
 
 
