@@ -77,37 +77,15 @@ function paintToDo(newTodo) {
   li.id = newTodo.id;
 
   const span = document.createElement("span");
- 
-  const num = 13;
-  let allText = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
- 
-  if (allText.length > num)
-  {
-    allText = allText.substring(0, 13) + "...";
-    span.innerText = allText;
-    console.log(span.innerText.clientWidth); 
-  }else{
-    span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
-  }
-  
-  
   const button = document.createElement("button");
-    button.innerText = "X";
-    button.style.color = "red";
-    button.style.border= "none";
-    button.style.backgroundColor = "rgb(179, 174, 174)";
-    button.style.opacity = "80%";
-    button.style.borderRadius ="5px";
-    button.style.margin = "10px";
-    button.style.left = "20%";
-    button.style.transform = "translateX(-20%)";
-    button.style.cursor= "pointer";
-
-    button.addEventListener("click",deleteToDo);  
-    li.appendChild(span);
+  button.innerText = "X";
     
-    li.appendChild(button);
-    toDoList.appendChild(li);    
+  button.addEventListener("click",deleteToDo);  
+  li.appendChild(span);
+  li.appendChild(button);
+  toDoList.appendChild(li);  
+
+  span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";  
 }
 
 function paintToDoSecond(newTodoSecond) {
@@ -115,22 +93,15 @@ function paintToDoSecond(newTodoSecond) {
   li.id = newTodoSecond.id;
 
   const span = document.createElement("span");
-  span.innerText = newTodoSecond.text + "  ";
-
   const button = document.createElement("button");
-    button.innerText = "X";
-    button.style.color = "red";
-    button.style.border= "none";
-    button.style.backgroundColor = "rgb(179, 174, 174)";
-    button.style.opacity = "80%";
-    button.style.borderRadius ="5px";
-    button.style.margin = "10px";
-    button.style.cursor= "pointer";
+  button.innerText = "X";
     
-    button.addEventListener("click",deleteToDoSecond);  
-    li.appendChild(span);
-    li.appendChild(button);
-    toDoListSecond.appendChild(li);    
+  button.addEventListener("click",deleteToDoSecond);  
+  li.appendChild(span);
+  li.appendChild(button);
+  toDoListSecond.appendChild(li);
+    
+  span.innerText  = newTodoSecond.text + " : " + newTodoSecond.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
 }
 
 function paintToDoThird(newTodoThird) {
@@ -138,22 +109,15 @@ function paintToDoThird(newTodoThird) {
   li.id = newTodoThird.id;
 
   const span = document.createElement("span");
-  span.innerText = newTodoThird.text + "  ";
-
   const button = document.createElement("button");
-    button.innerText = "X";
-    button.style.color = "red";
-    button.style.border= "none";
-    button.style.backgroundColor = "rgb(179, 174, 174)";
-    button.style.opacity = "80%";
-    button.style.borderRadius ="5px";
-    button.style.margin = "10px";
-    button.style.cursor= "pointer";
-    
-    button.addEventListener("click",deleteToDoThird);  
-    li.appendChild(span);
-    li.appendChild(button);
-    toDoListThird.appendChild(li);    
+  button.innerText = "X";
+
+  button.addEventListener("click",deleteToDoThird);  
+  li.appendChild(span);
+  li.appendChild(button);
+  toDoListThird.appendChild(li);    
+
+  span.innerText  = newTodoThird.text + " : " + newTodoThird.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
 }
 
 function paintToDoFourth(newTodoFourth) {
@@ -161,22 +125,15 @@ function paintToDoFourth(newTodoFourth) {
   li.id = newTodoFourth.id;
 
   const span = document.createElement("span");
-  span.innerText = newTodoFourth.text + "  ";
-
   const button = document.createElement("button");
-    button.innerText = "X";
-    button.style.color = "red";
-    button.style.border= "none";
-    button.style.backgroundColor = "rgb(179, 174, 174)";
-    button.style.opacity = "80%";
-    button.style.borderRadius ="5px";
-    button.style.margin = "10px";
-    button.style.cursor= "pointer";
-    
-    button.addEventListener("click",deleteToDoFourth);  
-    li.appendChild(span);
-    li.appendChild(button);
-    toDoListFourth.appendChild(li);    
+  button.innerText = "X";
+  
+  button.addEventListener("click",deleteToDoFourth);  
+  li.appendChild(span);
+  li.appendChild(button);
+  toDoListFourth.appendChild(li);
+  
+  span.innerText  = newTodoFourth.text + " : " + newTodoFourth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
 }
 
 

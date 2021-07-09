@@ -1,6 +1,6 @@
 .todo-form-all {
   position: absolute;
-  top: 32vh;
+  top: 28vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,8 +28,7 @@
   border: none;
   border-radius: 15px;
   padding: 10px;
-  margin-right: 10px;
-  margin-top: 5px;
+  margin: 5px;
   width: 150px;
   text-align: center;
   opacity: 70%;
@@ -41,16 +40,45 @@
 #todo-listThird,
 #todo-listFourth {
   display: flex;
+
   flex-direction: column;
   background-color: rgb(255, 238, 238);
   opacity: 70%;
   border-radius: 10px;
 }
 
-.testclass span {
-  width: 10px;
-  padding: 0 5px;
+#todo-list li,
+#todo-listSecond li,
+#todo-listThird li,
+#todo-listFourth li {
+  display: flex;
+}
+
+#todo-list span,
+#todo-listSecond span,
+#todo-listThird span,
+#todo-listFourth span {
+  margin: 10px;
+  width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+#todo-list button,
+#todo-listSecond button,
+#todo-listThird button,
+#todo-listFourth button {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  opacity: 80%;
+  margin: 10px 10px;
+  border-radius: 5px;
+  padding: 3px 5.5px;
+  float: right;
+  cursor: pointer;
+  color: red;
+  border: none;
+  background-color: rgb(179, 174, 174);
 }
