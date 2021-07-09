@@ -6,6 +6,7 @@
   justify-content: space-between;
   left: 3%;
   transform: translateX(-3%);
+  opacity: 80%;
 }
 
 .firstColumn,
@@ -28,10 +29,9 @@
   border: none;
   border-radius: 15px;
   padding: 10px;
-  margin: 5px 18px;
+  margin-bottom: 10px;
   width: 150px;
   text-align: center;
-  opacity: 70%;
   outline: none;
 }
 
@@ -40,10 +40,8 @@
 #todo-listThird,
 #todo-listFourth {
   display: flex;
-
   flex-direction: column;
   background-color: rgb(255, 238, 238);
-  opacity: 70%;
   border-radius: 10px;
 }
 
@@ -59,6 +57,7 @@
 #todo-listSecond span,
 #todo-listThird span,
 #todo-listFourth span {
+  font-weight: bold;
   margin-left: 10px;
   padding: 12px;
   width: 130px;
@@ -72,17 +71,16 @@
 #todo-listThird button,
 #todo-listFourth button {
   display: flex;
+  background-color: rgb(255, 238, 238);
   justify-content: center;
-
   margin-right: 10px;
   text-align: center;
-  opacity: 80%;
   border-radius: 5px;
   padding: 12px;
   float: right;
   cursor: pointer;
   color: red;
-  font-weight: 20px;
+  font-weight: bold;
   font-size: 15px;
   border: none;
 }
