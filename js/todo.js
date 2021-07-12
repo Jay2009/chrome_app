@@ -26,6 +26,9 @@ const toTalMoneyInputFourth = document.querySelector("#total-formFourth input");
 const toDoListFourth = document.getElementById("todo-listFourth");
 const TODOS_KEY_FOURTH = "todosFourth";
 
+const pieChart = document.getElementById("pie-chart");
+const checkPortfolio = document.getElementById("check-portfolio");
+
 let toDos = [];
 let toDosSecond = [];
 let toDosThird = [];
@@ -332,6 +335,17 @@ totalFormThird.addEventListener("submit", handleToDoSubmitThird);
 toDoFormFourth.addEventListener("submit", nextInputFourth);
 totalFormFourth.addEventListener("submit", handleToDoSubmitFourth);
 
+checkPortfolio.addEventListener("click", pieChartClicked );
+
+
+
+function pieChartClicked (event) {
+  pieChart.classList.remove("hidden");
+  checkPortfolio.classList.add("hidden");
+}
+//pieChart.classList.remove("hidden");
+//checkPortfolio.classList.add("hidden");
+
 const savedToDos = localStorage.getItem(TODOS_KEY);
 const savedToDosSecond = localStorage.getItem(TODOS_KEY_SECOND);
 const savedToDosThird = localStorage.getItem(TODOS_KEY_THIRD);
@@ -380,16 +394,32 @@ function drawChart() {
     ['Risk-free assets', sumNumFourth],
     ['Cash', 50]
   ]);
-  const options = {'title':'Portfolio rate',
-                'fontSize':'15',
+  const savedUsername = localStorage.getItem("username");
+ 
+  const options = {
+    
+                'title': savedUsername+ "'s" + ' Portfolio ',
+                'titleTextStyle' : {'color':'#315aac',
+                                    'fontSize':'20', 
+                                    'bold':'true' , 
+                                    'italic':'true'},
+
+                'fontSize':'14',
                 'width':400,
                 'height':400,
                 'backgroundColor': 'none',
                 'legend':'none'
                 };
+ 
   const chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+ 
   chart.draw(data, options);
+ 
+  
 }
+
+
+
 
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawIdealChart);
@@ -406,13 +436,18 @@ function drawIdealChart() {
     ['Risk-free assets', 5],
     ['Cash', 5]
   ]);
-  const options = {'title':'Ideal Portfolio',
-                'fontSize':'15',
-                'width':400,
-                'height':400,
-                'backgroundColor': 'none',
-                'legend':'none'
-                };
+  const options = {'title': 'The ideal Portfolio ',
+                    'titleTextStyle' : {'color':'#315aac',
+                              'fontSize':'20', 
+                              'bold':'true' , 
+                              'italic':'true'},
+
+                    'fontSize':'14',
+                    'width':400,
+                    'height':400,
+                    'backgroundColor': 'none',
+                    'legend':'none'
+  };
   const chart = new google.visualization.PieChart(document.getElementById('ideal-pie-chart'));
   chart.draw(data, options);
 }

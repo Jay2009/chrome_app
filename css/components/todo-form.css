@@ -6,13 +6,13 @@
   justify-content: space-between;
   left: 3%;
   transform: translateX(-3%);
-  opacity: 80%;
 }
 
 .firstColumn,
 .SecondColumn,
 .ThirdColumn,
-.FourthColumn {
+.FourthColumn,
+.FifthColumn {
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -33,6 +33,15 @@
   width: 150px;
   text-align: center;
   outline: none;
+}
+
+.todoInput::placeholder,
+.todoInputSecond::placeholder,
+.todoInputThird::placeholder,
+.todoInputFourth::placeholder,
+.toTalMoneyInput::placeholder {
+  color: #315aac;
+  font-weight: bold;
 }
 
 #todo-list,
@@ -79,7 +88,7 @@
   padding: 12px;
   float: right;
   cursor: pointer;
-  color: red;
+  color: tomato;
   font-weight: bold;
   font-size: 15px;
   border: none;
@@ -103,7 +112,11 @@
   padding: 12px;
 }
 
-#pie-chart {
-  display: flex;
-  justify-content: center;
+#check-portfolio {
+  border-radius: 15px;
+  border: none;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: #315aac;
 }
