@@ -102,3 +102,8 @@
   width: 194px;
   padding: 12px;
 }
+
+#pie-chart {
+  display: flex;
+  justify-content: center;
+}

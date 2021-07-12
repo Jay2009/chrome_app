@@ -30,7 +30,10 @@ let toDos = [];
 let toDosSecond = [];
 let toDosThird = [];
 let toDosFourth = [];
-
+let sumNum = 0;
+let sumNumSecond = 0;
+let sumNumThird = 0;
+let sumNumFourth = 0;
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -88,10 +91,17 @@ function paintToDo(newTodo) {
 
   span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
   console.log(span.scrollWidth);
-  console.log(span);
+  //typeof newTodo.value;
+ // let cutStr = newTodo.indexOf(" : ");
+  
+  const onlyNumber = parseInt(newTodo.value);
+  sumNum = onlyNumber + sumNum;
   
   
 }
+  
+
+ //let onlyNumber = onlyNumber + ;
 
 function paintToDoSecond(newTodoSecond) {
   const li = document.createElement("li");
@@ -107,6 +117,9 @@ function paintToDoSecond(newTodoSecond) {
   toDoListSecond.appendChild(li);
     
   span.innerText  = newTodoSecond.text + " : " + newTodoSecond.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+
+  const onlyNumber = parseInt(newTodoSecond.value);
+  sumNumSecond = onlyNumber + sumNumSecond;
 }
 
 function paintToDoThird(newTodoThird) {
@@ -123,6 +136,8 @@ function paintToDoThird(newTodoThird) {
   toDoListThird.appendChild(li);    
 
   span.innerText  = newTodoThird.text + " : " + newTodoThird.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  const onlyNumber = parseInt(newTodoThird.value);
+  sumNumThird = onlyNumber + sumNumThird;
 }
 
 function paintToDoFourth(newTodoFourth) {
@@ -139,6 +154,8 @@ function paintToDoFourth(newTodoFourth) {
   toDoListFourth.appendChild(li);
   
   span.innerText  = newTodoFourth.text + " : " + newTodoFourth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  const onlyNumber = parseInt(newTodoFourth.value);
+  sumNumFourth = onlyNumber + sumNumFourth;
 }
 
 function maxNumberLength(object){
@@ -159,12 +176,12 @@ const numberOfTag = toDoList.childElementCount;
 
         const newTotalMoney = toTalMoneyInput.value;
         toTalMoneyInput.value = "";
-
         const newTodoObj = {
             text: newTodo,
             id: Date.now(),
             value: newTotalMoney,
         };
+        
         toDos.push(newTodoObj);
         paintToDo(newTodoObj);
         saveToDos();
@@ -325,6 +342,7 @@ if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
+ 
 }
 
 if (savedToDosSecond !== null) {
@@ -343,4 +361,58 @@ if (savedToDosFourth !== null) {
   const parsedToDosFourth = JSON.parse(savedToDosFourth);
   toDosFourth = parsedToDosFourth;
   parsedToDosFourth.forEach(paintToDoFourth);
+}
+
+console.log(savedToDos.value) ;
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'Topping');
+  data.addColumn('number', 'Slices');
+  data.addRows([
+    ['Large-cap',  sumNum],
+    ['Mid-cap', sumNumSecond],
+    ['Small-cap', sumNumThird],
+    ['Risk-free assets', sumNumFourth],
+    ['Cash', 50]
+  ]);
+  const options = {'title':'Portfolio rate',
+                'fontSize':'15',
+                'width':400,
+                'height':400,
+                'backgroundColor': 'none',
+                'legend':'none'
+                };
+  const chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+  chart.draw(data, options);
+}
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawIdealChart);
+
+function drawIdealChart() {
+
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'Topping');
+  data.addColumn('number', 'Slices');
+  data.addRows([
+    ['Large-cap',  40],
+    ['Mid-cap', 30],
+    ['Small-cap', 20],
+    ['Risk-free assets', 5],
+    ['Cash', 5]
+  ]);
+  const options = {'title':'Ideal Portfolio',
+                'fontSize':'15',
+                'width':400,
+                'height':400,
+                'backgroundColor': 'none',
+                'legend':'none'
+                };
+  const chart = new google.visualization.PieChart(document.getElementById('ideal-pie-chart'));
+  chart.draw(data, options);
 }
