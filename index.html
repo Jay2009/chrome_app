@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href=<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +36,9 @@
 
     <div class = "todo-form-all">
         <div class = "firstColumn">
+            
             <form id="todo-form">
+                <span>1st</span>
                 <input class="todoInput" maxlength="10" required type="text" placeholder="Large-cap stocks" />     
             </form>
 
@@ -50,42 +51,70 @@
 
         <div class = "SecondColumn">
             <form id="todo-formSecond">
+                <span>A</span>
                 <input class="todoInputSecond" maxlength="10" required type="text" placeholder="Mid-cap stocks" />
             </form>
 
             <form id ="total-formSecond">
-                <input class="toTalMoneyInput" maxlength="10" required type="number" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number"oninput="maxNumberLength(this)" placeholder="Total amount" />
             </form>
             <ul id="todo-listSecond"></ul>
         </div>
 
         <div class = "ThirdColumn">
             <form id="todo-formThird">
+                <span>B</span>
                 <input class="todoInputThird" maxlength="10" required type="text" placeholder="Small-cap stocks" />
             </form>
 
             <form id ="total-formThird">
-                <input class="toTalMoneyInput" maxlength="10" required type="number" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
             </form>
             <ul id="todo-listThird"></ul>
         </div>
 
         <div class = "FourthColumn">
             <form id="todo-formFourth">
+                <span>C</span>
                 <input class="todoInputFourth" maxlength="10" required type="text" placeholder="Risk-free assets" />
             </form>
 
             <form id ="total-formFourth">
-                <input class="toTalMoneyInput" maxlength="10" required type="number" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
             </form>
             <ul id="todo-listFourth"></ul>
         </div>
-        <div class= "FifthColumn">
-            <button id="check-portfolio" type="onClick">Check your Portfolio !</button>
-            <div id="pie-chart" class="hidden" ></div>
-            
+
+        <div class = "FifthColumn">
+            <form id="todo-formFifth">
+                <span>D</span>
+                <input class="todoInputFifth" maxlength="10" required type="text" placeholder="Risk-free assets" />
+            </form>
+
+            <form id ="total-formFifth">
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
+            </form>
+            <ul id="todo-listFifth"></ul>
         </div>
-        <div id="ideal-pie-chart" ></div>
+
+        <div class = "SixthColumn">
+            <form id="todo-formSixth">
+                <span>Cash</span>
+            </form>
+
+            <form id ="total-formSixth">
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
+            </form>
+            <ul id="todo-listSixth"></ul>
+        </div>
+
+        <div class= "SeventhColumn">
+            <a class="pie-chart" href="result.html">
+                <i class="fas fa-chart-pie fa-7x"> </i>
+                <span>Click </span>
+                <span>for a result</span>
+            </a>
+        </div>
         
     </div>
 
@@ -95,7 +124,6 @@
         <span></span>
         <span></span>
     </div>
-    <script src="js/piechart.js" ></script>
     <script src="js/weather.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/clcok.js"></script>

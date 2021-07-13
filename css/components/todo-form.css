@@ -1,6 +1,6 @@
 .todo-form-all {
   position: absolute;
-  top: 28vh;
+  top: 26vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,16 +12,38 @@
 .SecondColumn,
 .ThirdColumn,
 .FourthColumn,
-.FifthColumn {
+.FifthColumn,
+.SixthColumn,
+.SeventhColumn {
   display: flex;
   flex-direction: column;
   padding: 15px;
 }
 
+.SeventhColumn {
+  justify-content: center;
+}
+
+#todo-form span,
+#todo-formSecond span,
+#todo-formThird span,
+#todo-formFourth span,
+#todo-formFifth span,
+#todo-formSixth span {
+  color: #315aac;
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-radius: 25px;
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 10px;
+}
 .todoInput,
 .todoInputSecond,
 .todoInputThird,
 .todoInputFourth,
+.todoInputFifth,
+.todoInputSixth,
 .toTalMoneyInput {
   display: flex;
   align-items: center;
@@ -39,6 +61,8 @@
 .todoInputSecond::placeholder,
 .todoInputThird::placeholder,
 .todoInputFourth::placeholder,
+.todoInputFifth::placeholder,
+.todoInputSixth::placeholder,
 .toTalMoneyInput::placeholder {
   color: #315aac;
   font-weight: bold;
@@ -47,7 +71,9 @@
 #todo-list,
 #todo-listSecond,
 #todo-listThird,
-#todo-listFourth {
+#todo-listFourth,
+#todo-listFifth,
+#todo-listSixth {
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 238, 238);
@@ -57,7 +83,9 @@
 #todo-list li,
 #todo-listSecond li,
 #todo-listThird li,
-#todo-listFourth li {
+#todo-listFourth li,
+#todo-listFifth li,
+#todo-listSixth li {
   display: flex;
   align-items: center;
 }
@@ -65,7 +93,9 @@
 #todo-list span,
 #todo-listSecond span,
 #todo-listThird span,
-#todo-listFourth span {
+#todo-listFourth span,
+#todo-listFifth span,
+#todo-listSixth span {
   font-weight: bold;
   margin-left: 10px;
   padding: 12px;
@@ -78,7 +108,9 @@
 #todo-list button,
 #todo-listSecond button,
 #todo-listThird button,
-#todo-listFourth button {
+#todo-listFourth button,
+#todo-listFifth button,
+#todo-listSixth button {
   display: flex;
   background-color: rgb(255, 238, 238);
   justify-content: center;
@@ -97,7 +129,8 @@
 #todo-list span:hover,
 #todo-listSecond span:hover,
 #todo-listThird span:hover,
-#todo-listFourth span:hover {
+#todo-listFourth span:hover,
+#todo-listFifth span:hover {
   width: 290px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -107,7 +140,8 @@
 #todo-list button:hover,
 #todo-listSecond button:hover,
 #todo-listThird button:hover,
-#todo-listFourth button:hover {
+#todo-listFourth button:hover,
+#todo-listFifth button:hover {
   width: 194px;
   padding: 12px;
 }
@@ -119,4 +153,31 @@
   color: white;
   font-weight: bold;
   background-color: #315aac;
+}
+
+.pie-chart {
+  display: felx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pie-chart i {
+  color: #315aac;
+  font-weight: bold;
+  border-color: black;
+}
+.pie-chart span {
+  display: flex;
+  color: #315aac;
+  font-weight: bold;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pie-chart span:last-child {
+  font-size: 15px;
 }

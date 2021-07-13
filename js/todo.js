@@ -26,17 +26,40 @@ const toTalMoneyInputFourth = document.querySelector("#total-formFourth input");
 const toDoListFourth = document.getElementById("todo-listFourth");
 const TODOS_KEY_FOURTH = "todosFourth";
 
-const pieChart = document.getElementById("pie-chart");
-const checkPortfolio = document.getElementById("check-portfolio");
+const toDoFormFifth = document.getElementById("todo-formFifth");
+const totalFormFifth = document.getElementById("total-formFifth");
+const toDoInputFifth = document.querySelector("#todo-formFifth input");
+const toTalMoneyInputFifth = document.querySelector("#total-formFifth input");
+const toDoListFifth = document.getElementById("todo-listFifth");
+const TODOS_KEY_FIFTH = "todosFifth";
+
+const toDoFormSixth = document.getElementById("todo-formSixth");
+const totalFormSixth = document.getElementById("total-formSixth");
+//const toDoInputSixth = document.querySelector("#todo-formSixh input");
+const toTalMoneyInputSixth = document.querySelector("#total-formSixth input");
+const toDoListSixth = document.getElementById("todo-listSixth");
+const TODOS_KEY_SIXTH = "todosSixth";
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+const savedToDosSecond = localStorage.getItem(TODOS_KEY_SECOND);
+const savedToDosThird = localStorage.getItem(TODOS_KEY_THIRD);
+const savedToDosFourth = localStorage.getItem(TODOS_KEY_FOURTH);
+const savedToDosFifth = localStorage.getItem(TODOS_KEY_FIFTH);
+const savedToDosSixth = localStorage.getItem(TODOS_KEY_SIXTH);
 
 let toDos = [];
 let toDosSecond = [];
 let toDosThird = [];
 let toDosFourth = [];
+let toDosFifth = [];
+let toDosSixth = [];
+
 let sumNum = 0;
 let sumNumSecond = 0;
 let sumNumThird = 0;
 let sumNumFourth = 0;
+let sumNumFifth = 0;
+let sumNumSixth = 0;
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -49,6 +72,12 @@ function saveToDosThird() {
 }
 function saveToDosFourth() {
     localStorage.setItem(TODOS_KEY_FOURTH, JSON.stringify(toDosFourth));
+  }
+  function saveToDosFifth() {
+    localStorage.setItem(TODOS_KEY_FIFTH, JSON.stringify(toDosFifth));
+  }
+  function saveToDosSixth() {
+    localStorage.setItem(TODOS_KEY_SIXTH, JSON.stringify(toDosSixth));
   }
 
 
@@ -77,6 +106,20 @@ function deleteToDoFourth(event) {
   saveToDosFourth();
 }
 
+function deleteToDoFifth(event) {
+  const li = event.target.parentElement;
+  li.remove();
+  toDosFifth = toDosFifth.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDosFifth();
+}
+
+function deleteToDoSixth(event) {
+  const li = event.target.parentElement;
+  li.remove();
+  toDosSixth = toDosSixth.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDosSixth();
+}
+
 
 function paintToDo(newTodo) {
   const li = document.createElement("li");
@@ -94,17 +137,12 @@ function paintToDo(newTodo) {
 
   span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
   console.log(span.scrollWidth);
-  //typeof newTodo.value;
- // let cutStr = newTodo.indexOf(" : ");
-  
   const onlyNumber = parseInt(newTodo.value);
   sumNum = onlyNumber + sumNum;
-  
+  console.log(sumNum);
   
 }
-  
 
- //let onlyNumber = onlyNumber + ;
 
 function paintToDoSecond(newTodoSecond) {
   const li = document.createElement("li");
@@ -160,6 +198,41 @@ function paintToDoFourth(newTodoFourth) {
   const onlyNumber = parseInt(newTodoFourth.value);
   sumNumFourth = onlyNumber + sumNumFourth;
 }
+function paintToDoFifth(newTodoFifth) {
+  const li = document.createElement("li");
+  li.id = newTodoFifth.id;
+
+  const span = document.createElement("span");
+  const button = document.createElement("button");
+  button.innerText = "X";
+  
+  button.addEventListener("click",deleteToDoFifth);  
+  li.appendChild(span);
+  li.appendChild(button);
+  toDoListFifth.appendChild(li);
+  
+  span.innerText  = newTodoFifth.text + " : " + newTodoFifth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  const onlyNumber = parseInt(newTodoFifth.value);
+  sumNumFifth = onlyNumber + sumNumFifth;
+}
+function paintToDoSixth(newTotalMoneySixth) {
+  const li = document.createElement("li");
+  li.id = newTotalMoneySixth.id;
+
+  const span = document.createElement("span");
+  const button = document.createElement("button");
+  button.innerText = "X";
+  
+  button.addEventListener("click",deleteToDoSixth);  
+  li.appendChild(span);
+  li.appendChild(button);
+  toDoListSixth.appendChild(li);
+  
+  span.innerText  = newTotalMoneySixth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  const onlyNumber = parseInt(newTotalMoneySixth.value);
+  sumNumSixth = onlyNumber + sumNumSixth;
+}
+
 
 function maxNumberLength(object){
   if(object.value.length > object.maxLength){
@@ -305,6 +378,65 @@ function handleToDoSubmitFourth(event) {
     toDoInputFourth.focus();
   }
 }
+
+function handleToDoSubmitFifth(event) {
+  const numberOfTag = toDoListFifth.childElementCount;
+
+  if(toDoInputFifth.value != ""){ 
+    if(numberOfTag <=9){  
+      event.preventDefault();
+      const newTodoFifth = toDoInputFifth.value;
+      toDoInputFifth.value = "";
+      
+      const newTotalMoneyFifth = toTalMoneyInputFifth.value;
+      toTalMoneyInputFifth.value = "";
+
+      const newTodoObjFifth = {
+          text: newTodoFifth,
+          id: Date.now(),
+          value: newTotalMoneyFifth,
+      };
+      toDosFifth.push(newTodoObjFifth);
+      paintToDoFifth(newTodoObjFifth);
+      saveToDosFifth();
+      toDoInputFifth.focus();
+    } else{
+    event.preventDefault();
+    toDoInputFifth.value = "";
+    toTalMoneyInputFifth.value = "";
+    alert("The number of list is maximum now.");
+    }
+  }else{
+    event.preventDefault();
+    alert("Please type the name of stock");
+    toDoInputFifth.focus();
+  }
+}
+
+function handleToDoSubmitSixth(event) {
+  const numberOfTag = toDoListSixth.childElementCount;
+
+    if(numberOfTag <1){  
+      event.preventDefault();
+      const newTotalMoneySixth = toTalMoneyInputSixth.value;
+      toTalMoneyInputSixth.value = "";
+
+      const newTodoObjSixth = {
+          id: Date.now(),
+          value: newTotalMoneySixth,
+      };
+      toDosSixth.push(newTodoObjSixth);
+      paintToDoSixth(newTodoObjSixth);
+      saveToDosSixth();
+      
+    } else{
+    event.preventDefault();
+    toTalMoneyInputSixth.value = "";
+    alert("The number of list is maximum now.");
+    }
+}
+
+
 function nextInput(event){
   event.preventDefault();
   toTalMoneyInput.focus(); 
@@ -321,6 +453,11 @@ function nextInputFourth(event){
   event.preventDefault();
   toTalMoneyInputFourth.focus();
 }
+function nextInputFifth(event){
+  event.preventDefault();
+  toTalMoneyInputFifth.focus();
+}
+
 
 
 toDoForm.addEventListener("submit", nextInput);
@@ -335,28 +472,16 @@ totalFormThird.addEventListener("submit", handleToDoSubmitThird);
 toDoFormFourth.addEventListener("submit", nextInputFourth);
 totalFormFourth.addEventListener("submit", handleToDoSubmitFourth);
 
-checkPortfolio.addEventListener("click", pieChartClicked );
+toDoFormFifth.addEventListener("submit", nextInputFifth);
+totalFormFifth.addEventListener("submit", handleToDoSubmitFifth);
 
 
-
-function pieChartClicked (event) {
-  pieChart.classList.remove("hidden");
-  checkPortfolio.classList.add("hidden");
-}
-//pieChart.classList.remove("hidden");
-//checkPortfolio.classList.add("hidden");
-
-const savedToDos = localStorage.getItem(TODOS_KEY);
-const savedToDosSecond = localStorage.getItem(TODOS_KEY_SECOND);
-const savedToDosThird = localStorage.getItem(TODOS_KEY_THIRD);
-const savedToDosFourth = localStorage.getItem(TODOS_KEY_FOURTH);
-
+totalFormSixth.addEventListener("submit", handleToDoSubmitSixth);
 
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
- 
 }
 
 if (savedToDosSecond !== null) {
@@ -377,77 +502,14 @@ if (savedToDosFourth !== null) {
   parsedToDosFourth.forEach(paintToDoFourth);
 }
 
-console.log(savedToDos.value) ;
-
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-
-  const data = new google.visualization.DataTable();
-  data.addColumn('string', 'Topping');
-  data.addColumn('number', 'Slices');
-  data.addRows([
-    ['Large-cap',  sumNum],
-    ['Mid-cap', sumNumSecond],
-    ['Small-cap', sumNumThird],
-    ['Risk-free assets', sumNumFourth],
-    ['Cash', 50]
-  ]);
-  const savedUsername = localStorage.getItem("username");
- 
-  const options = {
-    
-                'title': savedUsername+ "'s" + ' Portfolio ',
-                'titleTextStyle' : {'color':'#315aac',
-                                    'fontSize':'20', 
-                                    'bold':'true' , 
-                                    'italic':'true'},
-
-                'fontSize':'14',
-                'width':400,
-                'height':400,
-                'backgroundColor': 'none',
-                'legend':'none'
-                };
- 
-  const chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
- 
-  chart.draw(data, options);
- 
-  
+if (savedToDosFifth !== null) {
+  const parsedToDosFifth = JSON.parse(savedToDosFifth);
+  toDosFifth = parsedToDosFifth;
+  parsedToDosFifth.forEach(paintToDoFifth);
 }
 
-
-
-
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawIdealChart);
-
-function drawIdealChart() {
-
-  const data = new google.visualization.DataTable();
-  data.addColumn('string', 'Topping');
-  data.addColumn('number', 'Slices');
-  data.addRows([
-    ['Large-cap',  40],
-    ['Mid-cap', 30],
-    ['Small-cap', 20],
-    ['Risk-free assets', 5],
-    ['Cash', 5]
-  ]);
-  const options = {'title': 'The ideal Portfolio ',
-                    'titleTextStyle' : {'color':'#315aac',
-                              'fontSize':'20', 
-                              'bold':'true' , 
-                              'italic':'true'},
-
-                    'fontSize':'14',
-                    'width':400,
-                    'height':400,
-                    'backgroundColor': 'none',
-                    'legend':'none'
-  };
-  const chart = new google.visualization.PieChart(document.getElementById('ideal-pie-chart'));
-  chart.draw(data, options);
+if (savedToDosSixth !== null) {
+  const parsedToDosSixth = JSON.parse(savedToDosSixth);
+  toDosSixth = parsedToDosSixth;
+  parsedToDosSixth.forEach(paintToDoSixth);
 }

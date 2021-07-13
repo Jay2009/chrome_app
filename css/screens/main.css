@@ -111,6 +111,7 @@
   position: center;
   display: flex;
   text-align: center;
+  color: #315aac;
 }
 
 #quote span:last-child {
