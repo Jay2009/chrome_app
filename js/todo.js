@@ -47,6 +47,15 @@ const savedToDosFourth = localStorage.getItem(TODOS_KEY_FOURTH);
 const savedToDosFifth = localStorage.getItem(TODOS_KEY_FIFTH);
 const savedToDosSixth = localStorage.getItem(TODOS_KEY_SIXTH);
 
+localStorage.setItem('sumNum',"0");
+localStorage.setItem('sumNumSecond',"0");
+localStorage.setItem('sumNumThird',"0");
+localStorage.setItem('sumNumFourth',"0");
+localStorage.setItem('sumNumFifth',"0");
+localStorage.setItem('sumNumSixth',"0");
+
+
+
 let toDos = [];
 let toDosSecond = [];
 let toDosThird = [];
@@ -54,7 +63,6 @@ let toDosFourth = [];
 let toDosFifth = [];
 let toDosSixth = [];
 
-let sumNum = 0;
 let sumNumSecond = 0;
 let sumNumThird = 0;
 let sumNumFourth = 0;
@@ -63,28 +71,38 @@ let sumNumSixth = 0;
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+  
 }
 function saveToDosSecond() {
     localStorage.setItem(TODOS_KEY_SECOND, JSON.stringify(toDosSecond));
   }
 function saveToDosThird() {
   localStorage.setItem(TODOS_KEY_THIRD, JSON.stringify(toDosThird));
-}
+  }
 function saveToDosFourth() {
     localStorage.setItem(TODOS_KEY_FOURTH, JSON.stringify(toDosFourth));
   }
-  function saveToDosFifth() {
+function saveToDosFifth() {
     localStorage.setItem(TODOS_KEY_FIFTH, JSON.stringify(toDosFifth));
   }
-  function saveToDosSixth() {
+function saveToDosSixth() {
     localStorage.setItem(TODOS_KEY_SIXTH, JSON.stringify(toDosSixth));
   }
 
-
 function deleteToDo(event) {
-  const li = event.target.parentElement;
-  li.remove();
-  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  
+  const divTag = event.target.parentElement;
+  console.log(divTag);
+  const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
+  
+  const deletedNumber = parseInt(numberContent);
+  const SavedNumber = parseInt(localStorage.getItem("sumNum"));
+  const afterNumber = SavedNumber - deletedNumber;
+
+  localStorage.setItem("sumNum",afterNumber);
+  
+  divTag.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(divTag.id));
   saveToDos();
 }
 function deleteToDoSecond(event) {
@@ -122,25 +140,41 @@ function deleteToDoSixth(event) {
 
 
 function paintToDo(newTodo) {
+  const divTag = document.createElement("div");
+  divTag.id = newTodo.id;
   const li = document.createElement("li");
-  li.id = newTodo.id;
-
-  const span = document.createElement("span");
+  
+  
+  const spanCompany = document.createElement("span");
+  const spanAmount = document.createElement("span");
+  const currencycalled = document.createElement("span");
   const button = document.createElement("button");
-  button.innerText = "X";
-    
-  button.addEventListener("click",deleteToDo);  
-  li.appendChild(span);
-  li.appendChild(button);
-  toDoList.appendChild(li);  
-  
 
-  span.innerText  = newTodo.text + " : " + newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
-  console.log(span.scrollWidth);
-  const onlyNumber = parseInt(newTodo.value);
-  sumNum = onlyNumber + sumNum;
-  console.log(sumNum);
+  button.innerText = "X";
   
+  button.addEventListener("click",deleteToDo);  
+  
+  li.appendChild(spanCompany);
+  li.appendChild(spanAmount);
+  li.appendChild(currencycalled);
+  
+  divTag.appendChild(li);
+  divTag.appendChild(button);    
+  toDoList.appendChild(divTag);  
+
+  spanCompany.innerText  = newTodo.text + " : " ;
+  spanAmount.innerText = newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  currencycalled.innerText = "원";
+  
+  const onlyNumber = parseInt(newTodo.value);
+  console.log(onlyNumber);
+
+  const savedNum = parseInt(localStorage.getItem('sumNum'));
+  console.log(savedNum);
+
+  const afterNum = onlyNumber + savedNum;
+
+  localStorage.setItem('sumNum',afterNum);
 }
 
 
@@ -162,7 +196,6 @@ function paintToDoSecond(newTodoSecond) {
   const onlyNumber = parseInt(newTodoSecond.value);
   sumNumSecond = onlyNumber + sumNumSecond;
 }
-
 function paintToDoThird(newTodoThird) {
   const li = document.createElement("li");
   li.id = newTodoThird.id;
@@ -180,7 +213,6 @@ function paintToDoThird(newTodoThird) {
   const onlyNumber = parseInt(newTodoThird.value);
   sumNumThird = onlyNumber + sumNumThird;
 }
-
 function paintToDoFourth(newTodoFourth) {
   const li = document.createElement("li");
   li.id = newTodoFourth.id;
@@ -252,6 +284,7 @@ const numberOfTag = toDoList.childElementCount;
 
         const newTotalMoney = toTalMoneyInput.value;
         toTalMoneyInput.value = "";
+        
         const newTodoObj = {
             text: newTodo,
             id: Date.now(),
@@ -513,3 +546,7 @@ if (savedToDosSixth !== null) {
   toDosSixth = parsedToDosSixth;
   parsedToDosSixth.forEach(paintToDoSixth);
 }
+
+
+
+

@@ -1,19 +1,28 @@
 const pieChart = document.getElementById("user-pie-chart");
 const checkPortfolio = document.getElementById("check-portfolio");
+//const savedToDos = localStorage.getItem('todos');
+
+const a =localStorage.getItem("sumNum");
+console.log(a+"this is first column's sum");
+
+
+
+
+
 
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
-
 function drawChart() {
-
+  
+  
   const data = new google.visualization.DataTable();
   data.addColumn('string', 'Topping');
   data.addColumn('number', 'Slices');
   data.addRows([
-    ['Large-cap',  sumNum],
-    ['Mid-cap', sumNumSecond],
-    ['Small-cap', sumNumThird],
-    ['Risk-free assets', sumNumFourth],
+    ['Large-cap',  1],
+    ['Mid-cap', 2],
+    ['Small-cap', 3],
+    ['Risk-free assets', 4],
     ['Cash', 50]
   ]);
   const savedUsername = localStorage.getItem("username");

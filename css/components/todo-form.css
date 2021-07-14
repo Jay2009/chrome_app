@@ -80,14 +80,22 @@
   border-radius: 10px;
 }
 
+#todo-list div {
+  display: flex;
+  flex-direction: row;
+}
+
 #todo-list li,
 #todo-listSecond li,
 #todo-listThird li,
 #todo-listFourth li,
 #todo-listFifth li,
 #todo-listSixth li {
-  display: flex;
-  align-items: center;
+  width: 130px;
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #todo-list span,
@@ -97,12 +105,6 @@
 #todo-listFifth span,
 #todo-listSixth span {
   font-weight: bold;
-  margin-left: 10px;
-  padding: 12px;
-  width: 130px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 #todo-list button,
@@ -111,13 +113,11 @@
 #todo-listFourth button,
 #todo-listFifth button,
 #todo-listSixth button {
-  display: flex;
   background-color: rgb(255, 238, 238);
-  justify-content: center;
-  margin-right: 10px;
+  display: block;
+
   text-align: center;
   border-radius: 5px;
-  padding: 12px;
   float: right;
   cursor: pointer;
   color: tomato;
@@ -126,25 +126,25 @@
   border: none;
 }
 
-#todo-list span:hover,
+#todo-list li:hover,
 #todo-listSecond span:hover,
 #todo-listThird span:hover,
 #todo-listFourth span:hover,
 #todo-listFifth span:hover {
-  width: 290px;
+  width: 360px;
   overflow: hidden;
-  text-overflow: ellipsis;
+
   white-space: nowrap;
 }
 
-#todo-list button:hover,
+/* #todo-list button:hover,
 #todo-listSecond button:hover,
 #todo-listThird button:hover,
 #todo-listFourth button:hover,
 #todo-listFifth button:hover {
   width: 194px;
   padding: 12px;
-}
+}  */
 
 #check-portfolio {
   border-radius: 15px;
@@ -180,4 +180,8 @@
 
 .pie-chart span:last-child {
   font-size: 15px;
+}
+
+.pie-chart i:hover {
+  color: #1c418a;
 }
