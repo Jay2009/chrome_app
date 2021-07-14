@@ -115,10 +115,8 @@
 #todo-listSixth button {
   background-color: rgb(255, 238, 238);
   display: block;
-
   text-align: center;
   border-radius: 5px;
-  float: right;
   cursor: pointer;
   color: tomato;
   font-weight: bold;
@@ -131,10 +129,7 @@
 #todo-listThird span:hover,
 #todo-listFourth span:hover,
 #todo-listFifth span:hover {
-  width: 360px;
-  overflow: hidden;
-
-  white-space: nowrap;
+  width: 300px;
 }
 
 /* #todo-list button:hover,

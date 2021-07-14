@@ -2,33 +2,27 @@ const pieChart = document.getElementById("user-pie-chart");
 const checkPortfolio = document.getElementById("check-portfolio");
 //const savedToDos = localStorage.getItem('todos');
 
-const a =localStorage.getItem("sumNum");
+const a =parseInt(localStorage.getItem("sumNum"));
 console.log(a+"this is first column's sum");
 
 
-
-
-
-
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-function drawChart() {
-  
-  
-  const data = new google.visualization.DataTable();
+        google.charts.load('current', {'packages':['corechart']}); 
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
   data.addColumn('string', 'Topping');
-  data.addColumn('number', 'Slices');
+  data.addColumn('number', '비중');
   data.addRows([
-    ['Large-cap',  1],
+    ['Large-cap',a],
     ['Mid-cap', 2],
     ['Small-cap', 3],
     ['Risk-free assets', 4],
     ['Cash', 50]
   ]);
-  const savedUsername = localStorage.getItem("username");
+  
  
   const options = {
-    
+                'is3D': 'true',
                 'title': savedUsername+ "'s" + ' Portfolio ',
                 'titleTextStyle' : {'color':'#315aac',
                                     'fontSize':'20', 
@@ -41,7 +35,7 @@ function drawChart() {
                 'legend':'none'
                 };
  
-  const chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+  const chart = new google.visualization.PieChart(document.getElementById('user-pie-chart'));
  
   chart.draw(data, options);
  
@@ -67,6 +61,7 @@ function drawIdealChart() {
     ['Cash', 5]
   ]);
   const options = {'title': 'The ideal Portfolio ',
+                    'is3D': 'true',
                     'titleTextStyle' : {'color':'#315aac',
                               'fontSize':'20', 
                               'bold':'true' , 
