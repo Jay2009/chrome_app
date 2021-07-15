@@ -90,11 +90,8 @@ function saveToDosSixth() {
   }
 
 function deleteToDo(event) {
-  
   const divTag = event.target.parentElement;
-  console.log(divTag);
   const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
-  
   const deletedNumber = parseInt(numberContent);
   const SavedNumber = parseInt(localStorage.getItem("sumNum"));
   const afterNumber = SavedNumber - deletedNumber;
@@ -106,35 +103,68 @@ function deleteToDo(event) {
   saveToDos();
 }
 function deleteToDoSecond(event) {
-  const li = event.target.parentElement;
-  li.remove();
-  toDosSecond = toDosSecond.filter((toDo) => toDo.id !== parseInt(li.id));
+  const divTag = event.target.parentElement;
+  const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
+  const deletedNumber = parseInt(numberContent);
+  const SavedNumber = parseInt(localStorage.getItem("sumNumSecond"));
+  const afterNumber = SavedNumber - deletedNumber;
+
+  localStorage.setItem("sumNumSecond",afterNumber);
+
+  divTag.remove();
+  toDosSecond = toDosSecond.filter((toDo) => toDo.id !== parseInt(divTag.id));
   saveToDosSecond();
 }
 function deleteToDoThird(event) {
-  const li = event.target.parentElement;
-  li.remove();
-  toDosThird = toDosThird.filter((toDo) => toDo.id !== parseInt(li.id));
+  const divTag = event.target.parentElement;
+  const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
+  const deletedNumber = parseInt(numberContent);
+  const SavedNumber = parseInt(localStorage.getItem("sumNumThird"));
+  const afterNumber = SavedNumber - deletedNumber;
+
+  localStorage.setItem("sumNumThird",afterNumber);
+
+  divTag.remove();
+  toDosThird = toDosThird.filter((toDo) => toDo.id !== parseInt(divTag.id));
   saveToDosThird();
 }
 function deleteToDoFourth(event) {
-  const li = event.target.parentElement;
-  li.remove();
-  toDosFourth = toDosFourth.filter((toDo) => toDo.id !== parseInt(li.id));
+  const divTag = event.target.parentElement;
+  const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
+  const deletedNumber = parseInt(numberContent);
+  const SavedNumber = parseInt(localStorage.getItem("sumNumFourth"));
+  const afterNumber = SavedNumber - deletedNumber;
+
+  localStorage.setItem("sumNumFourth",afterNumber);
+  
+  divTag.remove();
+  toDosFourth = toDosFourth.filter((toDo) => toDo.id !== parseInt(divTag.id));
   saveToDosFourth();
 }
-
 function deleteToDoFifth(event) {
-  const li = event.target.parentElement;
-  li.remove();
-  toDosFifth = toDosFifth.filter((toDo) => toDo.id !== parseInt(li.id));
+  const divTag = event.target.parentElement;
+  const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
+  const deletedNumber = parseInt(numberContent);
+  const SavedNumber = parseInt(localStorage.getItem("sumNumFifth"));
+  const afterNumber = SavedNumber - deletedNumber;
+  
+  localStorage.setItem("sumNumFifth",afterNumber);
+
+  divTag.remove();
+  toDosFifth = toDosFifth.filter((toDo) => toDo.id !== parseInt(divTag.id));
   saveToDosFifth();
 }
-
 function deleteToDoSixth(event) {
-  const li = event.target.parentElement;
-  li.remove();
-  toDosSixth = toDosSixth.filter((toDo) => toDo.id !== parseInt(li.id));
+  const divTag = event.target.parentElement;
+  const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
+  const deletedNumber = parseInt(numberContent);
+  const SavedNumber = parseInt(localStorage.getItem("sumNumSixth"));
+  const afterNumber = SavedNumber - deletedNumber;
+
+  localStorage.setItem("sumNumSixth",afterNumber);
+
+  divTag.remove();
+  toDosSixth = toDosSixth.filter((toDo) => toDo.id !== parseInt(divTag.id));
   saveToDosSixth();
 }
 
@@ -143,8 +173,6 @@ function paintToDo(newTodo) {
   const divTag = document.createElement("div");
   divTag.id = newTodo.id;
   const li = document.createElement("li");
-  
-  
   const spanCompany = document.createElement("span");
   const spanAmount = document.createElement("span");
   const currencycalled = document.createElement("span");
@@ -167,102 +195,158 @@ function paintToDo(newTodo) {
   currencycalled.innerText = "원";
   
   const onlyNumber = parseInt(newTodo.value);
-  console.log(onlyNumber);
-
   const savedNum = parseInt(localStorage.getItem('sumNum'));
-  console.log(savedNum);
-
   const afterNum = onlyNumber + savedNum;
 
   localStorage.setItem('sumNum',afterNum);
 }
 
-
 function paintToDoSecond(newTodoSecond) {
+  const divTag = document.createElement("div");
+  divTag.id = newTodoSecond.id;
   const li = document.createElement("li");
-  li.id = newTodoSecond.id;
-
-  const span = document.createElement("span");
+  const spanCompany = document.createElement("span");
+  const spanAmount = document.createElement("span");
+  const currencycalled = document.createElement("span");
   const button = document.createElement("button");
+
   button.innerText = "X";
     
   button.addEventListener("click",deleteToDoSecond);  
-  li.appendChild(span);
-  li.appendChild(button);
-  toDoListSecond.appendChild(li);
-    
-  span.innerText  = newTodoSecond.text + " : " + newTodoSecond.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  li.appendChild(spanCompany);
+  li.appendChild(spanAmount);
+  li.appendChild(currencycalled);
+  
+  divTag.appendChild(li);
+  divTag.appendChild(button);    
+  toDoListSecond.appendChild(divTag);  
+
+  spanCompany.innerText  = newTodoSecond.text + " : " ;
+  spanAmount.innerText = newTodoSecond.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  currencycalled.innerText = "원";
 
   const onlyNumber = parseInt(newTodoSecond.value);
-  sumNumSecond = onlyNumber + sumNumSecond;
-}
-function paintToDoThird(newTodoThird) {
-  const li = document.createElement("li");
-  li.id = newTodoThird.id;
+  const savedNum = parseInt(localStorage.getItem('sumNumSecond'));
+  const afterNum = onlyNumber + savedNum;
 
-  const span = document.createElement("span");
+  localStorage.setItem('sumNumSecond',afterNum);
+}
+
+function paintToDoThird(newTodoThird) {
+  const divTag = document.createElement("div");
+  divTag.id = newTodoThird.id;
+  const li = document.createElement("li");
+  const spanCompany = document.createElement("span");
+  const spanAmount = document.createElement("span");
+  const currencycalled = document.createElement("span");
   const button = document.createElement("button");
   button.innerText = "X";
 
   button.addEventListener("click",deleteToDoThird);  
-  li.appendChild(span);
-  li.appendChild(button);
-  toDoListThird.appendChild(li);    
+  li.appendChild(spanCompany);
+  li.appendChild(spanAmount);
+  li.appendChild(currencycalled);
+  
+  divTag.appendChild(li);
+  divTag.appendChild(button);    
+  toDoListThird.appendChild(divTag);   
 
-  span.innerText  = newTodoThird.text + " : " + newTodoThird.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  spanCompany.innerText  = newTodoThird.text + " : " ;
+  spanAmount.innerText = newTodoThird.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  currencycalled.innerText = "원";
+
   const onlyNumber = parseInt(newTodoThird.value);
-  sumNumThird = onlyNumber + sumNumThird;
+  const savedNum = parseInt(localStorage.getItem('sumNumThird'));
+  const afterNum = onlyNumber + savedNum;
+
+  localStorage.setItem('sumNumThird',afterNum);
 }
 function paintToDoFourth(newTodoFourth) {
+  const divTag = document.createElement("div");
+  divTag.id = newTodoFourth.id;
   const li = document.createElement("li");
-  li.id = newTodoFourth.id;
-
-  const span = document.createElement("span");
+  const spanCompany = document.createElement("span");
+  const spanAmount = document.createElement("span");
+  const currencycalled = document.createElement("span");
   const button = document.createElement("button");
   button.innerText = "X";
   
   button.addEventListener("click",deleteToDoFourth);  
-  li.appendChild(span);
-  li.appendChild(button);
-  toDoListFourth.appendChild(li);
+  li.appendChild(spanCompany);
+  li.appendChild(spanAmount);
+  li.appendChild(currencycalled);
   
-  span.innerText  = newTodoFourth.text + " : " + newTodoFourth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
+  divTag.appendChild(li);
+  divTag.appendChild(button);    
+  toDoListFourth.appendChild(divTag);   
+
+  spanCompany.innerText  = newTodoFourth.text + " : " ;
+  spanAmount.innerText = newTodoFourth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  currencycalled.innerText = "원";
+
   const onlyNumber = parseInt(newTodoFourth.value);
-  sumNumFourth = onlyNumber + sumNumFourth;
+  const savedNum = parseInt(localStorage.getItem('sumNumFourth'));
+  const afterNum = onlyNumber + savedNum;
+
+  localStorage.setItem('sumNumFourth',afterNum);
 }
 function paintToDoFifth(newTodoFifth) {
+  const divTag = document.createElement("div");
+  divTag.id = newTodoFifth.id;
   const li = document.createElement("li");
-  li.id = newTodoFifth.id;
-
-  const span = document.createElement("span");
+  const spanCompany = document.createElement("span");
+  const spanAmount = document.createElement("span");
+  const currencycalled = document.createElement("span");
   const button = document.createElement("button");
   button.innerText = "X";
   
   button.addEventListener("click",deleteToDoFifth);  
-  li.appendChild(span);
-  li.appendChild(button);
-  toDoListFifth.appendChild(li);
+  li.appendChild(spanCompany);
+  li.appendChild(spanAmount);
+  li.appendChild(currencycalled);
   
-  span.innerText  = newTodoFifth.text + " : " + newTodoFifth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
-  const onlyNumber = parseInt(newTodoFifth.value);
-  sumNumFifth = onlyNumber + sumNumFifth;
-}
-function paintToDoSixth(newTotalMoneySixth) {
-  const li = document.createElement("li");
-  li.id = newTotalMoneySixth.id;
+  divTag.appendChild(li);
+  divTag.appendChild(button);    
+  toDoListFifth.appendChild(divTag);   
 
-  const span = document.createElement("span");
+  spanCompany.innerText  = newTodoFifth.text + " : " ;
+  spanAmount.innerText = newTodoFifth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  currencycalled.innerText = "원";
+
+  const onlyNumber = parseInt(newTodoFifth.value);
+  const savedNum = parseInt(localStorage.getItem('sumNumFifth'));
+  const afterNum = onlyNumber + savedNum;
+
+  localStorage.setItem('sumNumFifth',afterNum);
+}
+function paintToDoSixth(newTodoSixth) {
+  const divTag = document.createElement("div");
+  divTag.id = newTodoSixth.id;
+  const li = document.createElement("li");
+  const spanCompany = document.createElement("span");
+  const spanAmount = document.createElement("span");
+  const currencycalled = document.createElement("span");
   const button = document.createElement("button");
   button.innerText = "X";
   
   button.addEventListener("click",deleteToDoSixth);  
-  li.appendChild(span);
-  li.appendChild(button);
-  toDoListSixth.appendChild(li);
+  li.appendChild(spanCompany);
+  li.appendChild(spanAmount);
+  li.appendChild(currencycalled);
   
-  span.innerText  = newTotalMoneySixth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ "원";
-  const onlyNumber = parseInt(newTotalMoneySixth.value);
-  sumNumSixth = onlyNumber + sumNumSixth;
+  divTag.appendChild(li);
+  divTag.appendChild(button);    
+  toDoListSixth.appendChild(divTag);   
+
+  spanCompany.innerText  = newTodoSixth.text;
+  spanAmount.innerText = newTodoSixth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  currencycalled.innerText = "원";
+
+  const onlyNumber = parseInt(newTodoSixth.value);
+  const savedNum = parseInt(localStorage.getItem('sumNumSixth'));
+  const afterNum = onlyNumber + savedNum;
+
+  localStorage.setItem('sumNumSixth',afterNum);
 }
 
 
@@ -451,10 +535,14 @@ function handleToDoSubmitSixth(event) {
 
     if(numberOfTag <1){  
       event.preventDefault();
+      const newTodoSixth = "Cash : ";
+      
+
       const newTotalMoneySixth = toTalMoneyInputSixth.value;
       toTalMoneyInputSixth.value = "";
 
       const newTodoObjSixth = {
+          text: newTodoSixth,
           id: Date.now(),
           value: newTotalMoneySixth,
       };
@@ -507,7 +595,6 @@ totalFormFourth.addEventListener("submit", handleToDoSubmitFourth);
 
 toDoFormFifth.addEventListener("submit", nextInputFifth);
 totalFormFifth.addEventListener("submit", handleToDoSubmitFifth);
-
 
 totalFormSixth.addEventListener("submit", handleToDoSubmitSixth);
 

@@ -80,9 +80,13 @@
   border-radius: 10px;
 }
 
-#todo-list div {
+#todo-list div,
+#todo-listSecond div,
+#todo-listThird div,
+#todo-listFourth div,
+#todo-listFifth div,
+#todo-listSixth div {
   display: flex;
-  flex-direction: row;
 }
 
 #todo-list li,
@@ -91,8 +95,10 @@
 #todo-listFourth li,
 #todo-listFifth li,
 #todo-listSixth li {
-  width: 130px;
-  padding: 10px;
+  width: 140px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -116,20 +122,41 @@
   background-color: rgb(255, 238, 238);
   display: block;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   color: tomato;
   font-weight: bold;
   font-size: 15px;
   border: none;
+  visibility: hidden;
 }
 
-#todo-list li:hover,
-#todo-listSecond span:hover,
-#todo-listThird span:hover,
-#todo-listFourth span:hover,
-#todo-listFifth span:hover {
+#todo-list button:hover,
+#todo-listSecond button:hover,
+#todo-listThird button:hover,
+#todo-listFourth button:hover,
+#todo-listFifth button:hover,
+#todo-listSixth button:hover {
+  background-color: rgb(202, 202, 202);
+}
+
+#todo-list div:hover > li,
+#todo-listSecond div:hover > li,
+#todo-listThird div:hover > li,
+#todo-listFourth div:hover > li,
+#todo-listFifth div:hover > li,
+#todo-listSixth div:hover > li {
   width: 300px;
+}
+
+#todo-list div:hover > button,
+#todo-listSecond div:hover > button,
+#todo-listThird div:hover > button,
+#todo-listFourth div:hover > button,
+#todo-listFifth div:hover > button,
+#todo-listSixth div:hover > button {
+  visibility: visible;
+  padding: 10px 15px;
 }
 
 /* #todo-list button:hover,
@@ -151,32 +178,23 @@
 }
 
 .pie-chart {
-  display: felx;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #315aac;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .pie-chart i {
-  color: #315aac;
+  color: white;
   font-weight: bold;
   border-color: black;
-}
-.pie-chart span {
-  display: flex;
-  color: #315aac;
-  font-weight: bold;
-  font-size: 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 10px;
 }
 
-.pie-chart span:last-child {
-  font-size: 15px;
-}
-
-.pie-chart i:hover {
+.pie-chart :hover {
   color: #1c418a;
 }

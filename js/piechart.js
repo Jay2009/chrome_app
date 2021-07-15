@@ -3,7 +3,12 @@ const checkPortfolio = document.getElementById("check-portfolio");
 //const savedToDos = localStorage.getItem('todos');
 
 const a =parseInt(localStorage.getItem("sumNum"));
-console.log(a+"this is first column's sum");
+const b =parseInt(localStorage.getItem("sumNumSecond"));
+const c =parseInt(localStorage.getItem("sumNumThird"));
+const d =parseInt(localStorage.getItem("sumNumFourth"));
+const e =parseInt(localStorage.getItem("sumNumFifth"));
+const f =parseInt(localStorage.getItem("sumNumSixth"));
+
 
 
         google.charts.load('current', {'packages':['corechart']}); 
@@ -14,10 +19,11 @@ console.log(a+"this is first column's sum");
   data.addColumn('number', '비중');
   data.addRows([
     ['Large-cap',a],
-    ['Mid-cap', 2],
-    ['Small-cap', 3],
-    ['Risk-free assets', 4],
-    ['Cash', 50]
+    ['Mid-cap', b],
+    ['Small-cap', c],
+    ['Risk-free assets', d],
+    ['Cash', e],
+    ['Cash', f]
   ]);
   
  
@@ -58,6 +64,7 @@ function drawIdealChart() {
     ['Mid-cap', 30],
     ['Small-cap', 20],
     ['Risk-free assets', 5],
+    ['?', 5],
     ['Cash', 5]
   ]);
   const options = {'title': 'The ideal Portfolio ',
