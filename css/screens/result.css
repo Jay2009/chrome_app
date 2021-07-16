@@ -1,14 +1,26 @@
+.btnHome {
+  position: absolute;
+  background-color: #4267b2;
+  top: 9vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  padding: 8px;
+}
+
 #userName {
   position: absolute;
-  top: 17vh;
+  top: 20vh;
   display: flex;
   font-size: 45px;
   font-weight: bold;
   left: 50%;
   color: white;
-  text-shadow: 4px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
+  text-shadow: 2px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
   transform: translateX(-50%);
 }
-#user-pie-chart {
-  text-shadow: 3px 0 #c5d4f1, 0 1px#c5d4f1, 1px 0 #c5d4f1, 0 -1px #c5d4f1;
+
+#user-pie-chart,
+#ideal-pie-chart {
+  text-shadow: 1.5px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
 }

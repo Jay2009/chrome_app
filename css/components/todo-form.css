@@ -1,6 +1,6 @@
 .todo-form-all {
   position: absolute;
-  top: 26vh;
+  top: 30vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -65,7 +65,6 @@
 .todoInputSixth::placeholder,
 .toTalMoneyInput::placeholder {
   color: #315aac;
-  font-weight: bold;
 }
 
 #todo-list,
@@ -170,6 +169,7 @@
 
 #check-portfolio {
   border-radius: 15px;
+  margin-left: 100px;
   border: none;
   padding: 20px;
   color: white;

@@ -9,7 +9,7 @@ const c =parseInt(localStorage.getItem("sumNumThird"));
 const d =parseInt(localStorage.getItem("sumNumFourth"));
 const e =parseInt(localStorage.getItem("sumNumFifth"));
 const f =parseInt(localStorage.getItem("sumNumSixth"));
-getusertag.innerHTML = username;
+getusertag.innerHTML = "Hello, " + username;
 
 
         google.charts.load('current', {'packages':['corechart']}); 
@@ -31,7 +31,7 @@ getusertag.innerHTML = username;
   const options = {
                 'is3D': 'true',
                 'title': username + "'s" + ' Portfolio ',
-                'titleTextStyle' : {'color':'#315aac',
+                'titleTextStyle' : {'color':'white',
                                     'fontSize':'20', 
                                     'bold':'true' , 
                                     'italic':'true'},
@@ -70,7 +70,7 @@ function drawIdealChart() {
   ]);
   const options = {'title': 'The ideal Portfolio ',
                     'is3D': 'true',
-                    'titleTextStyle' : {'color':'#315aac',
+                    'titleTextStyle' : {'color':'white',
                               'fontSize':'20', 
                               'bold':'true' , 
                               'italic':'true'},

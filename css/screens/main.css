@@ -1,4 +1,5 @@
 .bgImage {
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -8,25 +9,17 @@
   z-index: -1;
 }
 
-#weather {
-  position: absolute;
-  top: 3vh;
-  font-size: 20px;
-  right: 2%;
-  font-weight: 40px;
-}
-
 #clock {
   color: #4267b2;
   position: absolute;
-  display: flex;
+
   justify-content: center;
   text-align: center;
-  top: 5vh;
-  display: flex;
-  font-size: 45px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 4vh;
+
+  font-size: 40px;
+  right: 4%;
+
   background-color: white;
   border-radius: 20px;
   padding: 1px 10px;
@@ -52,6 +45,9 @@
 
   outline: none;
 }
+.loginInput::placeholder {
+  color: #315aac;
+}
 
 .loginSubmit {
   display: flex;
@@ -67,19 +63,19 @@
 
 #greeting {
   position: absolute;
-  top: 17vh;
+  top: 20vh;
   display: flex;
   font-size: 45px;
   font-weight: bold;
   left: 50%;
   color: white;
-  text-shadow: 4px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
+  text-shadow: 2px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
   transform: translateX(-50%);
 }
 
 #change-name {
   position: absolute;
-  top: 23vh;
+  top: 26vh;
   left: 50%;
   transform: translateX(-50%);
   font-weight: 60px;

@@ -6,7 +6,7 @@
 /*screens*/
 @import "screens/main.css";
 @import "screens/result.css";
-
+@import "screens/weather.css";
 body {
   font-family: "Montserrat", sans-serif;
 }

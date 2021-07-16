@@ -1,26 +1,26 @@
 const quotes = [
     {
-        quote: "It is not the end of the world as the clock is ticking.",
+        quote: "It is not the end of the world as the clock is ticking",
         author: "- Jay -",
     },
     {
-        quote: "Buy nice and cheap stocks.",
+        quote: "Buy nice and cheap stocks",
         author: "- Jay -",
     },
     {
-        quote: "Do not sell all your stocks at once, but sell day by day, DCA. ",
+        quote: "Do not sell all your stocks at once, but sell day by day, DCA",
         author: "- Jay -",
     },
     {
-        quote: "The natural-born investor is a myth. ",
+        quote: "The natural-born investor is a myth",
         author: "- Peter Lynch -",
     },
     {
-        quote: "Behind every stock is a company. Find out what it's doing. ",
+        quote: "Behind every stock is a company. Find out what it's doing",
         author: "- Peter Lynch -",
     },
     {
-        quote: "Do diversified investment along with hedge and risk-free assets. ",
+        quote: "Do diversified investment along with hedge and risk-free assets",
         author: "- Jay -",
     },
     {
@@ -28,7 +28,7 @@ const quotes = [
         author: "- Jay -",
     },
     {
-        quote: "Know what you own, and know why you own it.",
+        quote: "Know what you own, and know why you own it",
         author: "- Peter Lynch -",
     },
     {
@@ -36,8 +36,12 @@ const quotes = [
         author: "- Peter Lynch -",
     },
     {
-        quote: "The key to making money in stocks is not to get scared out of them.",
+        quote: "The key to making money in stocks is not to get scared out of them",
         author: "- Peter Lynch -",
+    },
+    {
+    quote: "Viva la vida.",
+    author: "- Coldplay -",
     },
 ];
 
