@@ -1,0 +1,11 @@
+#userName {
+  position: absolute;
+  top: 17vh;
+  display: flex;
+  font-size: 45px;
+  font-weight: bold;
+  left: 50%;
+  color: white;
+
+  transform: translateX(-50%);
+}

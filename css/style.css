@@ -5,6 +5,7 @@
 
 /*screens*/
 @import "screens/main.css";
+@import "screens/result.css";
 
 body {
   font-family: "Montserrat", sans-serif;

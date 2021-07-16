@@ -1,14 +1,15 @@
 const pieChart = document.getElementById("user-pie-chart");
 const checkPortfolio = document.getElementById("check-portfolio");
+const getusertag = document.getElementById("userName");
 //const savedToDos = localStorage.getItem('todos');
-
+const username = localStorage.getItem("username");
 const a =parseInt(localStorage.getItem("sumNum"));
 const b =parseInt(localStorage.getItem("sumNumSecond"));
 const c =parseInt(localStorage.getItem("sumNumThird"));
 const d =parseInt(localStorage.getItem("sumNumFourth"));
 const e =parseInt(localStorage.getItem("sumNumFifth"));
 const f =parseInt(localStorage.getItem("sumNumSixth"));
-
+getusertag.innerHTML = username;
 
 
         google.charts.load('current', {'packages':['corechart']}); 
@@ -29,7 +30,7 @@ const f =parseInt(localStorage.getItem("sumNumSixth"));
  
   const options = {
                 'is3D': 'true',
-                'title': savedUsername+ "'s" + ' Portfolio ',
+                'title': username + "'s" + ' Portfolio ',
                 'titleTextStyle' : {'color':'#315aac',
                                     'fontSize':'20', 
                                     'bold':'true' , 
