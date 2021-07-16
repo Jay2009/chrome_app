@@ -6,6 +6,9 @@
   font-weight: bold;
   left: 50%;
   color: white;
-
+  text-shadow: 4px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
   transform: translateX(-50%);
+}
+#user-pie-chart {
+  text-shadow: 3px 0 #c5d4f1, 0 1px#c5d4f1, 1px 0 #c5d4f1, 0 -1px #c5d4f1;
 }
