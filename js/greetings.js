@@ -22,25 +22,27 @@ function paintGreetings(username) {
   loginInput.placeholder='Write your name.';
 }
 
-btnChangeName.onclick = function(){
+btnChangeName.onclick = function(event){
   event.preventDefault();
   localStorage.removeItem(USERNAME_KEY);
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   greeting.innerText=``;
   btnChangeName.classList.add(HIDDEN_CLASSNAME);
   greeting.classList.add(HIDDEN_CLASSNAME);
-  
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 
 if (savedUsername === null) {
+  
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
+  
 } 
 else{
-  
+  btnChangeName.onclick;
   paintGreetings(savedUsername);
+  
 }
 

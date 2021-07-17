@@ -1,6 +1,6 @@
 const quotes = [
     {
-        quote: "It is not the end of the world as the clock is ticking",
+        quote: "It is not the end of the world as log as time is ticking",
         author: "- Jay -",
     },
     {
