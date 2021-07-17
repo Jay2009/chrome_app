@@ -1,11 +1,16 @@
-.btnHome {
+.btnHome img {
+  resize: both;
+  max-width: 60px;
+  height: auto;
   position: absolute;
-  background-color: #4267b2;
   top: 9vh;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 15px;
-  padding: 8px;
+  border-radius: 20px;
+  padding: 0.2px;
+}
+.btnHome img:hover {
+  background-color: white;
 }
 
 #userName {
