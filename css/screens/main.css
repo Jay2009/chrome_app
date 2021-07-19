@@ -9,21 +9,6 @@
   z-index: -1;
 }
 
-#clock {
-  color: #4267b2;
-  position: absolute;
-
-  justify-content: center;
-  text-align: center;
-  top: 4vh;
-
-  font-size: 40px;
-  right: 4%;
-
-  background-color: white;
-  border-radius: 20px;
-  padding: 1px 10px;
-}
 .login {
   position: absolute;
   top: 22vh;

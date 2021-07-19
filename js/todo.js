@@ -69,6 +69,8 @@ let sumNumFourth = 0;
 let sumNumFifth = 0;
 let sumNumSixth = 0;
 
+
+
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
   

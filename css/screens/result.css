@@ -25,7 +25,35 @@
   transform: translateX(-50%);
 }
 
+#todo-form-all {
+  position: absolute;
+  top: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  left: 3%;
+  transform: translateX(-3%);
+}
+
 #user-pie-chart,
 #ideal-pie-chart {
   text-shadow: 1.5px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
+}
+
+#score-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #4267b2;
+  padding: 20px;
+  border-radius: 25px;
+}
+#score-list span {
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+}
+#score-list span:first-child {
+  font-size: 20px;
+  color: rgb(236, 230, 230);
 }

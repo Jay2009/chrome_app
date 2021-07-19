@@ -22,6 +22,12 @@
         <span></span>
         <span></span>
     </div>
+
+    <audio id="music" autoplay controls> <source src="audio/vivalavida.mp3" type="audio/mp3"> 
+    </audio>
+
+
+
     <form class="hidden" id="login-form">
         <div class = "login">
             <input
@@ -39,18 +45,18 @@
         <img src="img/javiorlogo.jpg" />
     </a>
     <h1 id="greeting" class="hidden"></h1>
-    <button id="change-name" class="hidden" >Change name</button>
+    <button id="change-name" class="hidden">Change name</button>
 
     <div class = "todo-form-all">
         <div class = "firstColumn">
             
             <form id="todo-form">
-                <span>Real estate</span>
-                <input class="todoInput" maxlength="10" required type="text" placeholder="Large-cap stocks" />     
+                <span>기술주</span>
+                <input class="todoInput" maxlength="10" required type="text" placeholder="종목명" />     
             </form>
 
             <form id ="total-form">
-            <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
+            <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="해당 종목 총 투자금" />
             </form>
 
             <ul id="todo-list"></ul>
@@ -58,59 +64,59 @@
 
         <div class = "SecondColumn">
             <form id="todo-formSecond">
-                <span>Stock</span>
-                <input class="todoInputSecond" maxlength="10" required type="text" placeholder="Mid-cap stocks" />
+                <span>경기방어주</span>
+                <input class="todoInputSecond" maxlength="10" required type="text" placeholder="종목명" />
             </form>
 
             <form id ="total-formSecond">
-                <input class="toTalMoneyInput" maxlength="10" required type="number"oninput="maxNumberLength(this)" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number"oninput="maxNumberLength(this)" placeholder="해당 종목 총 투자금" />
             </form>
             <ul id="todo-listSecond"></ul>
         </div>
 
         <div class = "ThirdColumn">
             <form id="todo-formThird">
-                <span>risk-free assets</span>
-                <input class="todoInputThird" maxlength="10" required type="text" placeholder="Small-cap stocks" />
+                <span>배당주</span>
+                <input class="todoInputThird" maxlength="10" required type="text" placeholder="종목명" />
             </form>
 
             <form id ="total-formThird">
-                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="해당 종목 총 투자금" />
             </form>
             <ul id="todo-listThird"></ul>
         </div>
 
         <div class = "FourthColumn">
             <form id="todo-formFourth">
-                <span>Tangible assets</span>
-                <input class="todoInputFourth" maxlength="10" required type="text" placeholder="Risk-free assets" />
+                <span>테마주</span>
+                <input class="todoInputFourth" maxlength="10" required type="text" placeholder="종목명" />
             </form>
 
             <form id ="total-formFourth">
-                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="해당 종목 총 투자금" />
             </form>
             <ul id="todo-listFourth"></ul>
         </div>
 
         <div class = "FifthColumn">
             <form id="todo-formFifth">
-                <span>D</span>
-                <input class="todoInputFifth" maxlength="10" required type="text" placeholder="Risk-free assets" />
+                <span>안전자산</span>
+                <input class="todoInputFifth" maxlength="10" required type="text" placeholder="종목명" />
             </form>
 
             <form id ="total-formFifth">
-                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="해당 종목 총 투자금" />
             </form>
             <ul id="todo-listFifth"></ul>
         </div>
 
         <div class = "SixthColumn">
             <form id="todo-formSixth">
-                <span>Cash</span>
+                <span>현금</span>
             </form>
 
             <form id ="total-formSixth">
-                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="Total amount" />
+                <input class="toTalMoneyInput" maxlength="10" required type="number" oninput="maxNumberLength(this)" placeholder="총 액수" />
             </form>
             <ul id="todo-listSixth"></ul>
         </div>

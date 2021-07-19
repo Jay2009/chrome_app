@@ -18,7 +18,7 @@ function paintGreetings(username) {
   greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   btnChangeName.classList.remove(HIDDEN_CLASSNAME);
-  loginInput.value=null;
+  loginInput.value = null;
   loginInput.placeholder='Write your name.';
 }
 
@@ -41,7 +41,7 @@ if (savedUsername === null) {
   
 } 
 else{
-  btnChangeName.onclick;
+  loginForm.addEventListener("submit", onLoginSubmit);
   paintGreetings(savedUsername);
   
 }
