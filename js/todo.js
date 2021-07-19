@@ -1,42 +1,45 @@
+const audio = document.getElementById("#music");
+
+
 const toDoForm = document.getElementById("todo-form");
 const totalForm = document.getElementById("total-form");
 const toDoInput = document.querySelector("#todo-form input");
-const toTalMoneyInput = document.querySelector("#total-form input");
+const toTalMoneyInput = document.querySelector("#total-form:nth-child(2) input");
 const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos";
 
 const toDoFormSecond = document.getElementById("todo-formSecond");
 const totalFormSecond = document.getElementById("total-formSecond");
 const toDoInputSecond = document.querySelector("#todo-formSecond input");
-const toTalMoneyInputSecond = document.querySelector("#total-formSecond input");
+const toTalMoneyInputSecond = document.querySelector("#total-formSecond:nth-child(2) input");
 const toDoListSecond = document.getElementById("todo-listSecond");
 const TODOS_KEY_SECOND = "todosSecond";
 
 const toDoFormThird = document.getElementById("todo-formThird");
 const totalFormThird = document.getElementById("total-formThird");
 const toDoInputThird = document.querySelector("#todo-formThird input");
-const toTalMoneyInputThird = document.querySelector("#total-formThird input");
+const toTalMoneyInputThird = document.querySelector("#total-formThird:nth-child(2) input");
 const toDoListThird = document.getElementById("todo-listThird");
 const TODOS_KEY_THIRD = "todosThird";
 
 const toDoFormFourth = document.getElementById("todo-formFourth");
 const totalFormFourth = document.getElementById("total-formFourth");
 const toDoInputFourth = document.querySelector("#todo-formFourth input");
-const toTalMoneyInputFourth = document.querySelector("#total-formFourth input");
+const toTalMoneyInputFourth = document.querySelector("#total-formFourth:nth-child(2) input");
 const toDoListFourth = document.getElementById("todo-listFourth");
 const TODOS_KEY_FOURTH = "todosFourth";
 
 const toDoFormFifth = document.getElementById("todo-formFifth");
 const totalFormFifth = document.getElementById("total-formFifth");
 const toDoInputFifth = document.querySelector("#todo-formFifth input");
-const toTalMoneyInputFifth = document.querySelector("#total-formFifth input");
+const toTalMoneyInputFifth = document.querySelector("#total-formFifth:nth-child(2) input");
 const toDoListFifth = document.getElementById("todo-listFifth");
 const TODOS_KEY_FIFTH = "todosFifth";
 
 const toDoFormSixth = document.getElementById("todo-formSixth");
 const totalFormSixth = document.getElementById("total-formSixth");
 //const toDoInputSixth = document.querySelector("#todo-formSixh input");
-const toTalMoneyInputSixth = document.querySelector("#total-formSixth input");
+const toTalMoneyInputSixth = document.querySelector("#total-formSixth:nth-child(2) input");
 const toDoListSixth = document.getElementById("todo-listSixth");
 const TODOS_KEY_SIXTH = "todosSixth";
 
@@ -71,6 +74,7 @@ let sumNumSixth = 0;
 
 
 
+
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
   
@@ -94,9 +98,9 @@ function saveToDosSixth() {
 function deleteToDo(event) {
   const divTag = event.target.parentElement;
   const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
-  const deletedNumber = parseInt(numberContent);
+  const pureNum = parseInt(numberContent.replace(/,/g, ""));
   const SavedNumber = parseInt(localStorage.getItem("sumNum"));
-  const afterNumber = SavedNumber - deletedNumber;
+  const afterNumber = SavedNumber - pureNum;
 
   localStorage.setItem("sumNum",afterNumber);
   
@@ -107,9 +111,9 @@ function deleteToDo(event) {
 function deleteToDoSecond(event) {
   const divTag = event.target.parentElement;
   const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
-  const deletedNumber = parseInt(numberContent);
+  const pureNum = parseInt(numberContent.replace(/,/g, ""));
   const SavedNumber = parseInt(localStorage.getItem("sumNumSecond"));
-  const afterNumber = SavedNumber - deletedNumber;
+  const afterNumber = SavedNumber - pureNum;
 
   localStorage.setItem("sumNumSecond",afterNumber);
 
@@ -120,9 +124,9 @@ function deleteToDoSecond(event) {
 function deleteToDoThird(event) {
   const divTag = event.target.parentElement;
   const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
-  const deletedNumber = parseInt(numberContent);
+  const pureNum = parseInt(numberContent.replace(/,/g, ""));
   const SavedNumber = parseInt(localStorage.getItem("sumNumThird"));
-  const afterNumber = SavedNumber - deletedNumber;
+  const afterNumber = SavedNumber - pureNum;
 
   localStorage.setItem("sumNumThird",afterNumber);
 
@@ -133,9 +137,9 @@ function deleteToDoThird(event) {
 function deleteToDoFourth(event) {
   const divTag = event.target.parentElement;
   const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
-  const deletedNumber = parseInt(numberContent);
+  const pureNum = parseInt(numberContent.replace(/,/g, ""));
   const SavedNumber = parseInt(localStorage.getItem("sumNumFourth"));
-  const afterNumber = SavedNumber - deletedNumber;
+  const afterNumber = SavedNumber - pureNum;
 
   localStorage.setItem("sumNumFourth",afterNumber);
   
@@ -146,9 +150,9 @@ function deleteToDoFourth(event) {
 function deleteToDoFifth(event) {
   const divTag = event.target.parentElement;
   const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
-  const deletedNumber = parseInt(numberContent);
+  const pureNum = parseInt(numberContent.replace(/,/g, ""));
   const SavedNumber = parseInt(localStorage.getItem("sumNumFifth"));
-  const afterNumber = SavedNumber - deletedNumber;
+  const afterNumber = SavedNumber - pureNum;
   
   localStorage.setItem("sumNumFifth",afterNumber);
 
@@ -159,9 +163,9 @@ function deleteToDoFifth(event) {
 function deleteToDoSixth(event) {
   const divTag = event.target.parentElement;
   const numberContent = event.target.parentElement.childNodes[0].childNodes[1].innerText;
-  const deletedNumber = parseInt(numberContent);
+  const pureNum = parseInt(numberContent.replace(/,/g, ""));
   const SavedNumber = parseInt(localStorage.getItem("sumNumSixth"));
-  const afterNumber = SavedNumber - deletedNumber;
+  const afterNumber = SavedNumber - pureNum;
 
   localStorage.setItem("sumNumSixth",afterNumber);
 
@@ -193,10 +197,12 @@ function paintToDo(newTodo) {
   toDoList.appendChild(divTag);  
 
   spanCompany.innerText  = newTodo.text + " : " ;
-  spanAmount.innerText = newTodo.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  const numberWithoutComma = newTodo.value.replace(/,/g, "");
+  spanAmount.innerText = numberWithoutComma.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   currencycalled.innerText = "원";
   
-  const onlyNumber = parseInt(newTodo.value);
+  const onlyNumber = parseInt(numberWithoutComma);
   const savedNum = parseInt(localStorage.getItem('sumNum'));
   const afterNum = onlyNumber + savedNum;
 
@@ -224,10 +230,12 @@ function paintToDoSecond(newTodoSecond) {
   toDoListSecond.appendChild(divTag);  
 
   spanCompany.innerText  = newTodoSecond.text + " : " ;
+
+  const numberWithoutComma = newTodoSecond.value.replace(/,/g, "");
   spanAmount.innerText = newTodoSecond.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   currencycalled.innerText = "원";
 
-  const onlyNumber = parseInt(newTodoSecond.value);
+  const onlyNumber = parseInt(numberWithoutComma);
   const savedNum = parseInt(localStorage.getItem('sumNumSecond'));
   const afterNum = onlyNumber + savedNum;
 
@@ -254,15 +262,18 @@ function paintToDoThird(newTodoThird) {
   toDoListThird.appendChild(divTag);   
 
   spanCompany.innerText  = newTodoThird.text + " : " ;
+
+  const numberWithoutComma = newTodoThird.value.replace(/,/g, "");
   spanAmount.innerText = newTodoThird.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   currencycalled.innerText = "원";
 
-  const onlyNumber = parseInt(newTodoThird.value);
+  const onlyNumber = parseInt(numberWithoutComma);
   const savedNum = parseInt(localStorage.getItem('sumNumThird'));
   const afterNum = onlyNumber + savedNum;
 
   localStorage.setItem('sumNumThird',afterNum);
 }
+
 function paintToDoFourth(newTodoFourth) {
   const divTag = document.createElement("div");
   divTag.id = newTodoFourth.id;
@@ -283,10 +294,12 @@ function paintToDoFourth(newTodoFourth) {
   toDoListFourth.appendChild(divTag);   
 
   spanCompany.innerText  = newTodoFourth.text + " : " ;
+
+  const numberWithoutComma = newTodoFourth.value.replace(/,/g, "");
   spanAmount.innerText = newTodoFourth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   currencycalled.innerText = "원";
 
-  const onlyNumber = parseInt(newTodoFourth.value);
+  const onlyNumber = parseInt(numberWithoutComma);
   const savedNum = parseInt(localStorage.getItem('sumNumFourth'));
   const afterNum = onlyNumber + savedNum;
 
@@ -312,10 +325,12 @@ function paintToDoFifth(newTodoFifth) {
   toDoListFifth.appendChild(divTag);   
 
   spanCompany.innerText  = newTodoFifth.text + " : " ;
+
+  const numberWithoutComma = newTodoFifth.value.replace(/,/g, "");
   spanAmount.innerText = newTodoFifth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   currencycalled.innerText = "원";
 
-  const onlyNumber = parseInt(newTodoFifth.value);
+  const onlyNumber = parseInt(numberWithoutComma);
   const savedNum = parseInt(localStorage.getItem('sumNumFifth'));
   const afterNum = onlyNumber + savedNum;
 
@@ -341,10 +356,12 @@ function paintToDoSixth(newTodoSixth) {
   toDoListSixth.appendChild(divTag);   
 
   spanCompany.innerText  = newTodoSixth.text;
+
+  const numberWithoutComma = newTodoSixth.value.replace(/,/g, "");
   spanAmount.innerText = newTodoSixth.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   currencycalled.innerText = "원";
 
-  const onlyNumber = parseInt(newTodoSixth.value);
+  const onlyNumber = parseInt(numberWithoutComma);
   const savedNum = parseInt(localStorage.getItem('sumNumSixth'));
   const afterNum = onlyNumber + savedNum;
 
@@ -357,6 +374,44 @@ function maxNumberLength(object){
     object.value = object.value.slice(0, object.maxLength);
   }
 }
+
+function addCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+$("#total-form:nth-child(2) input").on("keyup", function() {
+  $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+});
+
+$("#total-formSecond:nth-child(2) input").on("keyup", function() {
+  $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+});
+
+
+$("#total-formThird:nth-child(2) input").on("keyup", function() {
+  $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+});
+
+
+$("#total-formFourth:nth-child(2) input").on("keyup", function() {
+  $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+});
+
+
+$("#total-formFifth:nth-child(2) input").on("keyup", function() {
+  $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+});
+
+
+$("#total-formSixth:nth-child(2) input").on("keyup", function() {
+  $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+});
+
+
+
+
+
 
 
 function handleToDoSubmit(event) { 
@@ -389,7 +444,7 @@ const numberOfTag = toDoList.childElementCount;
     }
   }else{
     event.preventDefault();
-    alert("Please type the name of stock");
+    alert("종목명을 입력해 주세요.");
     toDoInput.focus();
   }
 }
@@ -423,7 +478,7 @@ function handleToDoSubmitSecond(event) {
     }
   }else {
     event.preventDefault();
-    alert("Please type the name of stock");
+    alert("종목명을 입력해 주세요.");
     toDoInputSecond.focus();
   }
 }
@@ -459,7 +514,7 @@ function handleToDoSubmitThird(event) {
     }
   }else{
     event.preventDefault();
-    alert("Please type the name of stock");
+    alert("종목명을 입력해 주세요.");
     toDoInputThird.focus();
   }
 }
@@ -493,7 +548,7 @@ function handleToDoSubmitFourth(event) {
     }
   }else{
     event.preventDefault();
-    alert("Please type the name of stock");
+    alert("종목명을 입력해 주세요.");
     toDoInputFourth.focus();
   }
 }
@@ -527,7 +582,7 @@ function handleToDoSubmitFifth(event) {
     }
   }else{
     event.preventDefault();
-    alert("Please type the name of stock");
+    alert("종목명을 입력해 주세요.");
     toDoInputFifth.focus();
   }
 }

@@ -35,11 +35,6 @@
   transform: translateX(-3%);
 }
 
-#user-pie-chart,
-#ideal-pie-chart {
-  text-shadow: 1.5px 0 #4267b2, 0 1px#4267b2, 1px 0 #4267b2, 0 -1px #4267b2;
-}
-
 #score-list {
   display: flex;
   flex-direction: column;

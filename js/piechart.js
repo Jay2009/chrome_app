@@ -45,7 +45,7 @@ getusertag.innerHTML = "Hello, " + username;
   const options = {
                 'is3D': 'true',
                 'title': username + "'s" + ' Portfolio ',
-                'titleTextStyle' : {'color':'white',
+                'titleTextStyle' : {'color':'#4267b2',
                                     'fontSize':'20', 
                                     'bold':'true' , 
                                     'italic':'true'},
@@ -90,7 +90,7 @@ function drawIdealChart() {
   ]);
   const options = {'title': 'The ideal Portfolio ',
                     'is3D': 'true',
-                    'titleTextStyle' : {'color':'white',
+                    'titleTextStyle' : {'color':'#4267b2',
                               'fontSize':'20', 
                               'bold':'true' , 
                               'italic':'true'},
