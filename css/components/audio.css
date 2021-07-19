@@ -1,6 +1,7 @@
 #music {
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   right: 4%;
   width: 14%;
+  opacity: 40%;
 }
