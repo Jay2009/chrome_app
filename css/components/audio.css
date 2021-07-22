@@ -1,7 +1,7 @@
 #music {
-  position: absolute;
-  top: 15vh;
-  right: 4%;
-  width: 14%;
-  opacity: 40%;
+  display: flex;
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  opacity: 50%;
 }

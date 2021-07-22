@@ -1,7 +1,7 @@
 #weather {
-  position: absolute;
-  top: 4vh;
+  position: flex;
   font-size: 20px;
-  right: 5.2%;
   font-weight: 40px;
+  margin-top: 20px;
+  margin-right: 30px;
 }

@@ -2,13 +2,16 @@ const weather = document.querySelector("#weather i");
 const temperature =document.querySelector("#weather span:first-of-type");
 const city = document.querySelector("#weather span:last-child");
 const API_KEY ="bac12dcf9206f942ceff656cdfc55684";
- /*
+
+/*
 let weatherEmogi = data.weather[0].main;
 if(weather === "Clouds"){
   weather.classList.add('fas', 'fa-cloud-sun');
 }else {
   weather.classList.add('fas', 'fa-cloud');
 } */
+
+
 
 function onGeoOk(position){
     const lat = position.coords.latitude;
@@ -20,29 +23,31 @@ function onGeoOk(position){
     .then((response) => response.json())
     .then((data) => {
       let weatherEmogi = data.weather[0].main;
-      if(weather === "Clouds"){
+      
+      if(weatherEmogi === "Clouds"){
         weather.classList.add('fas', 'fa-cloud-sun');
       }
-      else if(weather === "Clear"){
+      else if(weatherEmogi === "Clear"){
         weather.classList.add('fas', 'fa-sun');  
       }
-      else if(weather === "Thunderstorm"){
+      else if(weatherEmogi === "Thunderstorm"){
         weather.classList.add('fas', 'fa-bolt');  
       }
-      else if(weather === "Drizzle"){
+      else if(weatherEmogi === "Drizzle"){
         weather.classList.add('fas', 'fa-water');  
       }
-      else if(weather === "Rain"){
+      else if(weatherEmogi === "Rain"){
         weather.classList.add('fas', 'fa-umbrella');  
       }
-      else if(weather === "Snow"){
+      else if(weatherEmogi === "Snow"){
         weather.classList.add('fas', 'fa-snowflake');  
       }
-      else if(weather === "Atmosphere"){
+      else if(weatherEmogi === "Atmosphere"){
         weather.classList.add('fas', 'fa-smog');  
       }
       else {
         weather.classList.add('fas', 'fa-cloud');
+        
       }
 
       
@@ -51,8 +56,6 @@ function onGeoOk(position){
     });
   
     
-
-
 }
 
 

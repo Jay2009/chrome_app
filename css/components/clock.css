@@ -1,11 +1,10 @@
 #clock {
   color: #4267b2;
-  position: absolute;
-  justify-content: center;
+  display: flex;
+  width: 210px;
+  align-items: center;
   text-align: center;
-  top: 8vh;
   font-size: 40px;
-  right: 4%;
   background-color: white;
   border-radius: 25px;
   padding: 6px 20px;
