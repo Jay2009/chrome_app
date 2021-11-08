@@ -33,15 +33,14 @@ getusertag.innerHTML = "Hello, " + username;
   data.addColumn('string', 'Topping');
   data.addColumn('number', '비중');
   data.addRows([
-    ['기술주',a],
-    ['경기방어주', b],
-    ['배당주', c],
-    ['해외주식', d],
-    ['안전자산', e],
+    ['미국 주식',a],
+    ['한국 주식', b],
+    ['중국 주식', c],
+    ['신흥국 주식', d],
+    ['안전 자산', e],
     ['현금', f]
   ]);
   
- 
   const options = {
                 'is3D': 'true',
                 'title': username + "'s" + ' Portfolio ',
@@ -81,11 +80,11 @@ function drawIdealChart() {
   data.addColumn('string', 'Topping');
   data.addColumn('number', 'Slices');
   data.addRows([
-    ['기술주',  40],
-    ['경기방어주', 20],
-    ['배당주', 10],
-    ['테마주', 10],
-    ['안전자산', 10],
+    ['미국 주식',  40],
+    ['한국 주식', 20],
+    ['중국 주식', 10],
+    ['신흥국 주식', 10],
+    ['안전 자산', 10],
     ['현금', 10]
   ]);
   const options = {'title': 'The ideal Portfolio ',
@@ -119,84 +118,84 @@ let totalScore = 0;
 
 function calculYourScore() {
   if(persentA == 40) {
-    console.log("기술주:40점");
+    console.log("미국 주식:40점");
     scoreOfA = 40;
   }else if((persentA < 40  && persentA >= 30) || (persentA > 40 && persentA < 60)){
-    console.log("기술주:30점");
+    console.log("미국 주식:30점");
     scoreOfA = 30;
   }else if((persentA < 30 && persentA >= 20) || (persentA >= 60 && persentA < 70)){
-    console.log("기술주:20점");
+    console.log("미국 주식:20점");
     scoreOfA = 20;
   }else if((persentA < 20 && persentA >= 10) || (persentA >= 70 && persentA < 80)){
-    console.log("기술주:10점");
+    console.log("미국 주식:10점");
     scoreOfA = 10;
   }else if((persentA < 10 && persentA > 0) || (persentA >= 90 && persentA < 100)){
-    console.log("기술주:5점");
+    console.log("미국 주식:5점");
     scoreOfA = 5;
   }else{
-    console.log("기술주:0점");
+    console.log("미국 주식:0점");
     scoreOfA = 0;
   }
 
   if(persentB == 20) {
-    console.log("경기방어주:20점");
+    console.log("한국 주식:20점");
     scoreOfB = 20;
   }else if((persentB < 20  && persentB >= 15) || (persentB > 20 && persentB < 40)){
-    console.log("경기방어주:15점");
+    console.log("한국 주식:15점");
     scoreOfB = 15;
   }else if((persentB < 15 && persentB >= 10) || (persentB >= 40 && persentB < 60)){
-    console.log("경기방어주:10점");
+    console.log("한국 주식:10점");
     scoreOfB = 10;
   }else if((persentB < 10 && persentB >= 5) || (persentB >= 60 && persentB < 80)){
-    console.log("경기방어주:5점");
+    console.log("한국 주식:5점");
     scoreOfB = 5;
   }else if((persentB < 5 && persentB > 0) || (persentB >= 80 && persentB < 100)){
-    console.log("경기방어주:3점");
+    console.log("한국 주식:3점");
     scoreOfB = 3;
   }else{
-    console.log("경기방어주:0점");
+    console.log("한국 주식:0점");
     scoreOfB = 0;
   }
 
 
   if(persentC == 10) {
-    console.log("배당주:20점");
+    console.log("중국 주식:20점");
     scoreOfC = 10;
   }else if((persentC < 10  && persentC >= 8) || (persentC > 10 && persentC < 15)){
-    console.log("배당주:8점");
+    console.log("중국 주식:8점");
     scoreOfC = 8;
   }else if((persentC < 8 && persentC >= 6) || (persentC >= 15 && persentC < 20)){
-    console.log("배당주:6점");
+    console.log("중국 주식:6점");
     scoreOfC = 6;
   }else if((persentC < 6 && persentC >= 4) || (persentC >= 20 && persentC < 35)){
-    console.log("배당주:4점");
+    console.log("중국 주식:4점");
     scoreOfC = 4;
   }else if((persentC < 4 && persentC > 2) || (persentC >= 35 && persentC < 100)){
-    console.log("배당주:2점");
+    console.log("중국 주식:2점");
     scoreOfC = 2;
   }else{
-    console.log("배당주:0점");
+    console.log("중국 주식:0점");
     scoreOfC = 0;
   }
 
 
   if(persentD == 10) {
-    console.log("테마주:20점");
+    console.log("신흥국 주식:20점");
     scoreOfD = 10;
   }else if((persentD < 10  && persentD >= 8) || (persentD > 10 && persentD < 15)){
-    console.log("테마주:8점");
+    console.log("신흥국 주식:8점");
     scoreOfD = 8;
   }else if((persentD < 8 && persentD >= 6) || (persentD >= 15 && persentD < 20)){
-    console.log("테마주:6점");
+    console.log("신흥국 주식:6점");
     scoreOfD = 6;
   }else if((persentD < 6 && persentD >= 4) || (persentD >= 20 && persentD < 35)){
-    console.log("테마주:4점");
+    console.log("신흥국 주식:4점");
     scoreOfD = 4;
   }else if((persentD < 4 && persentD > 2) || (persentD >= 35 && persentD < 100)){
-    console.log("테마주:2점");
+    console.log("신흥국 주식:2점");
     scoreOfD = 2;
   }else{
-    console.log("테마주:0점");
+    console.log("신흥국 주식:0점");
     scoreOfD = 0;
   }
 
@@ -265,7 +264,7 @@ console.log("your total score is : " + totalScore);
   spanScoreA.innerText = '기술주 점수 : ' + scoreOfA +'점 / 40점';
   spanScoreB.innerText = '경기방어주 점수 : ' + scoreOfB +'점 / 20점';
   spanScoreC.innerText = '배당주 점수 : ' + scoreOfC +'점 / 10점';
-  spanScoreD.innerText = '테마주 점수 : ' + scoreOfD +'점 / 10점';
+  spanScoreD.innerText = '신흥국 주식 점수 : ' + scoreOfD +'점 / 10점';
   spanScoreE.innerText = '안전자산 점수 : ' + scoreOfE +'점 / 10점';
   spanScoreF.innerText = '현금 점수 : ' + scoreOfF +'점 / 10점';
 

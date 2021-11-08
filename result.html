@@ -15,6 +15,7 @@
     <title>Javior Result</title>
 </head>
 <body>
+    <div id = "info-space">
     <div id="weather">
         <i></i>
         <span></span>
@@ -23,6 +24,8 @@
 
     <audio id="music" autoplay controls> <source src="audio/vivalavida.mp3" type="audio/mp3"> 
     </audio>
+    <h2 id="clock">00 : 00 : 00</h2>
+</div>
 
     <form class="hidden" id="login-form">
         <div class = "login">
@@ -36,7 +39,7 @@
         </div>
     </form>
 
-    <h2 id="clock">00 : 00 : 00</h2>
+    
 
     <a class="btnHome" href="index.html">
         <img src="img/javiorlogo.jpg" />
@@ -64,7 +67,11 @@
     <script src="js/background.js"></script>
     <script src="js/piechart.js"></script>
 
-    
+    <div id="no-mobile">
+        <span>please expand the width of the screen <br><br>
+            (no service on mobile yet)
+        </span>
+    </div>
 
 
 </body>
